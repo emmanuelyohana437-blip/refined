@@ -1,0 +1,2167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wild Escapes - Unforgettable Tanzania Adventures</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ========== CSS VARIABLES ========== */
+    :root {
+      --primary-gold: #D4A359;
+      --dark-green: #0D2B1D;
+      --accent-orange: #ff6b00;
+      --btn-brown: #451f05;
+      --white: #ffffff;
+      --transition: all 0.3s ease;
+    }
+
+    /* ========== RESET & BASE ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F9F8F3;
+      color: #1f2937;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ========== NAVBAR ========== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 23px 3%;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #d1d5db;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-orange);
+    }
+
+    .btn-book {
+      background-color: var(--btn-brown);
+      color: #ffffff;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-book:hover {
+      background-color: var(--accent-orange);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35);
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      min-height: 680px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 140px 24px 80px;
+      background-size: cover;
+      background-position: center;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.65)), url('images/pack.jpg');
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-label {
+      color: #E0A838;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 500;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      color: #e5e7eb;
+      font-size: 16px;
+      max-width: 540px;
+      margin: 0 auto 32px;
+      font-weight: 300;
+    }
+
+    .btn-explore {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--btn-brown);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 13px 28px;
+      border-radius: 50px;
+      transition: var(--transition);
+      box-shadow: 0 4px 16px var(--btn-brown);
+    }
+
+    .btn-explore:hover {
+      background: var(--accent-orange);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35);
+    }
+
+    /* Trust Badges */
+    .trust-bar {
+      max-width: 1000px;
+      margin: 40px auto 0;
+      width: 100%;
+    }
+
+    .trust-inner {
+      background: rgb(11, 15, 25);
+      backdrop-filter: blur(12px);
+      color: white;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px;
+    }
+
+    .trust-item i {
+      color: var(--accent-orange);
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .trust-item h4 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .trust-item p {
+      font-size: 11px;
+      color: #d1d5db;
+    }
+
+    /* ========== FILTER BAR ========== */
+    .filter-section {
+      max-width: 1340px;
+      margin: -28px auto 0;
+      padding: 0 24px;
+      position: relative;
+      z-index: 20;
+    }
+
+    .filter-card {
+      background: white;
+      border-radius: 16px;
+      padding: 14px 18px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+      border: 1px solid #f3f4f6;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .filter-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .filter-item i {
+      color: var(--accent-orange);
+      font-size: 18px;
+    }
+
+    .filter-item label {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #9ca3af;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .filter-item select {
+      width: 100%;
+      background: transparent;
+      border: none;
+      font-weight: 600;
+      font-size: 14px;
+      color: #1f2937;
+      cursor: pointer;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background-color: #ffffff;
+      border: 1px solid #cccccc;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 10px 14px;
+      border: none;
+      outline: none;
+      font-size: 10px;
+      color: #333333;
+    }
+
+    .btn-search {
+      background-color: var(--btn-brown);
+      color: #ffffff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-search:hover {
+      background-color: var(--accent-orange);
+      box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35);
+    }
+
+    /* ========== PACKAGES SECTION ========== */
+    .packages-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 50px 24px 20px;
+      width: 100%;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .section-label {
+      color: var(--accent-orange);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-header h2 {
+      font-size: 34px;
+      color: #111827;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .section-header p {
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    .section-icon {
+      margin-top: 10px;
+      color: var(--accent-orange);
+      font-size: 16px;
+    }
+
+    /* ========== CONTENT CONTAINER ========== */
+    .containe {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 24px 50px;
+    }
+
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 36px;
+    }
+
+    .section-left .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--accent-orange);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-left h3 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: #1a1a1a;
+      line-height: 1.3;
+    }
+
+    .section-left p {
+      color: #555;
+      max-width: 480px;
+    }
+
+    .section-right {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .video-thumb {
+      width: 100%;
+      max-width: 520px;
+      height: 280px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      background: #222;
+    }
+
+    .video-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #1a3c2e;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .why-us {
+      background: white;
+      border-radius: 12px;
+      padding: 20px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      max-width: 320px;
+      width: 400px;
+    }
+
+    .why-us h4 {
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    .why-us ul {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    .why-us li {
+      font-size: 13px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .why-us li i {
+      color: var(--accent-orange);
+      font-size: 12px;
+    }
+
+    .why-us a {
+      font-size: 13px;
+      color: var(--btn-brown);
+      font-weight: 600;
+    }
+
+
+::selection {
+  background-color: #ff6b00;
+  color: #0B0D12;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0D12;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A3142;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff6b00;
+}
+
+/* Container & Typography */
+.sec-wrap {
+  background: #fbfdfd;
+  padding: 5rem 1.5rem;
+  min-height: 100vh;
+  margin-top: -30px;
+}
+
+.container-box {
+  max-width: 81rem;
+  margin: 0 auto;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Header Section */
+.top-bar-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(20, 15, 15, 0.453);
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .top-bar-flex {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.sub-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ff6b00;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.sub-title-line {
+  width: 2rem;
+  height: 1px;
+  background-color: #ff6b00;
+}
+
+.main-heading {
+  font-size: 2.25rem;
+  color: black;
+  font-weight: 400;
+}
+
+@media (min-width: 640px) {
+  .main-heading {
+    font-size: 3rem;
+  }
+}
+
+.header-desc {
+  color:#ffffff;
+  font-weight: 300;
+  max-width: 28rem;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  margin-top: 1rem;
+}
+
+/* Cards Grid */
+.expeditions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .expeditions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .expeditions-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Glass Card Component */
+.card-box {
+  background: var(--white);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(87, 99, 37, 0.404);
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.card-box:hover {
+  border-color: rgba(132, 98, 18, 0.4);
+  transform: translateY(-4px);
+}
+
+.img-frame {
+  position: relative;
+  height: 15rem;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.card-box:hover .card-img {
+  transform: scale(1.05);
+}
+
+.img-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #171B26, rgba(23, 27, 38, 0.2), transparent);
+}
+
+.badge {
+  position: absolute;
+  top: -11rem;
+  left: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  background: #ff6b00;
+  color: #0B0D12;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: black;
+  line-height: 1.375;
+  transition: color 0.3s ease;
+}
+
+.card-box:hover .card-title {
+  color: #ff6b00;
+}
+
+.card-desc {
+  color: black;
+  font-size: 0.75rem;
+  font-weight: 300;
+  margin-top: 0.5rem;
+  line-height: 1.625;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-bottom {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price-label {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  color: black;
+  display: block;
+}
+
+.price-value {
+  font-size: 0.75rem;
+  color: #ff6b00;
+  font-weight: 600;
+}
+
+.btn-details {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid #451f05;
+  background: #451f05;
+  color: #fbfdfd;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.btn-details:hover {
+  border-color: #ff6b00;
+  background: #ff6b00;
+  color: #f5f2f2;
+}
+
+/* PURE CSS MODALS */
+.modal-state {
+  display: none;
+}
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(2, 3, 5, 0.952);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-state:checked + .popup-overlay {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.popup-card {
+  background: rgba(11, 15, 25, 0.965);
+  width: 100%;
+  max-width: 42rem;
+  margin-top: 100px;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(11, 15, 25, 0.85);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 20;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+  background: #000000;
+  color: #ff6b00;
+}
+
+.popup-banner {
+  height: 16rem;
+  width: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.popup-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popup-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #11141C, rgba(17, 20, 28, 0.4), transparent);
+}
+
+.popup-heading {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.5rem;
+  right: 1.5rem;
+}
+
+.popup-content {
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  color: #f3f5f8;
+}
+
+@media (min-width: 640px) {
+  .popup-content {
+    padding: 2rem;
+  }
+}
+
+.popup-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.875rem 0;
+}
+
+.detail-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-gold {
+  color: #ff6b00;
+}
+
+.modal-section-title {
+  font-size: 0.875rem;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.perks-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.625rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .perks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.perk-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.popup-footer {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.btn-modal-close {
+  cursor: pointer;
+  padding: 0.625rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid #451f05;
+  color: #D1D5DB;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.btn-modal-close:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-modal-action {
+  padding: 0.625rem 1.5rem;
+  border-radius: 9999px;
+  background: #451f05;
+  color: #FFFFFF;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-modal-action:hover {
+  background: #ff6b00;
+}
+
+
+   /* ========== PROMO BANNER ========== */
+    .promo-section {
+      max-width: 1340px;
+      margin: 0 auto;
+      margin-top: 50px;
+      padding: 20px 24px 50px;
+    }
+
+    .promo-banner {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      min-height: 230px;
+      display: flex;
+      align-items: center;
+      padding: 36px;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+      background-image: linear-gradient(to right, rgba(0,0,0,0.88) 40%, rgba(0,0,0,0.35)), url('images/pac.jpg');
+      color: white;
+    }
+
+    .promo-inner {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      z-index: 10;
+    }
+
+    .promo-badge {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--accent-orange);
+      color: var(--primary-gold);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .promo-banner h2 {
+      font-size: 28px;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .promo-banner p {
+      color: #d1d5db;
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    .promo-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .countdown {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+
+    .countdown-box {
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 10px 8px;
+      min-width: 56px;
+    }
+
+    .countdown-box span:first-child {
+      display: block;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .countdown-box span:last-child {
+      font-size: 10px;
+      color: #9ca3af;
+      text-transform: uppercase;
+    }
+
+
+    
+    /* ========== WHY BOOK WITH US ========== */
+    .why-section {
+      max-width: 1340px;
+      margin: 0 auto;
+      padding: 20px 24px 40px;
+    }
+
+    .why-card {
+      background: rgba(2, 3, 6, 0.98);
+      border-radius: 24px;
+      overflow: hidden;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 45px rgba(2, 3, 6, 0.9);
+    }
+
+    .why-img {
+      width: 100%;
+      height: 260px;
+    }
+
+    .why-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .why-content {
+      padding: 36px;
+    }
+
+    .why-content h2 {
+      font-size: 28px;
+      margin-bottom: 32px;
+      font-weight: 500;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .why-item i {
+      color: var(--accent-orange);
+      font-size: 26px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .why-item h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .why-item p {
+      font-size: 12px;
+      color: #d1d5db;
+      font-weight: 300;
+    }
+
+    .why-btn-wrap {
+      text-align: center;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--btn-brown);
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 13px 26px;
+      border-radius: 50px;
+      transition: var(--transition);
+    }
+
+    .btn-gold:hover {
+      background: var(--accent-orange);
+      transform: translateY(-2px);
+    }
+
+
+      /* --- SITE FOOTER --- */
+    .site-footer {
+      background: #09100b;
+      color: var(--white);
+      padding: 80px 6% 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.3fr 1fr;
+      gap: 50px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .footer-col h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+      color: var(--white);
+      position: relative;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 35px;
+      height: 2px;
+      background-color: #e05d00;
+    }
+
+    .footer-col p {
+      color: #8c968e;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #8c968e;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-links a:hover {
+      color: #e05d00;
+      transform: translateX(5px);
+    }
+
+    .contact-list {
+      list-style: none;
+    }
+
+    .contact-list li {
+      color: #8c968e;
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .contact-icon-box {
+      width: 36px;
+      height: 36px;
+      background-color: rgba(212, 163, 89, 0.1);
+      border: 1px solid rgba(212, 163, 89, 0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e05d00;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+      background-color: #e05d00;
+      border-color: var(--primary-gold);
+      color: #09100b;
+      transform: translateY(-4px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #5d665f;
+      font-size: 0.8rem;
+    }
+
+
+  /* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 50;
+    background-color:  #25D366;
+    color: #FFF;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.875rem;
+    text-decoration: none;
+    box-shadow: 0 10px 25px  rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: rgba(37, 211, 102, 0.6);
+}
+.whatsapp-tooltip {
+    position: absolute;
+    right: 4.25rem;
+    background: var(--bg-dark);
+    color: #FFF;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: opacity 0.2s ease;
+}
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+}
+    
+ 
+    /* ========== RESPONSIVE DESIGN ========== */
+    @media (min-width: 640px) {
+      .trust-inner {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+      }
+
+      .trust-item {
+        border-right: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 16px;
+      }
+
+      .trust-item:last-child {
+        border-right: none;
+      }
+
+      .filter-card {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .promo-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .promo-right {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .section-right {
+        flex-direction: row;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 56px;
+      }
+
+      .hero {
+        min-height: 720px;
+        padding: 150px 48px 90px;
+      }
+
+      .packages-section {
+        padding: 60px 40px 20px;
+      }
+
+      .section-header h2 {
+        font-size: 38px;
+      }
+
+      .section-head {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .section-left h3 {
+        font-size: 34px;
+      }
+
+      .why-card {
+        flex-direction: row;
+      }
+
+      .why-img {
+        width: 42%;
+        height: auto;
+        min-height: 100%;
+      }
+
+      .why-content {
+        width: 58%;
+        padding: 48px;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(4, 1fr);
+        text-align: left;
+      }
+
+      .why-content h2 {
+        font-size: 34px;
+      }
+
+      .why-btn-wrap {
+        text-align: right;
+      }
+
+      .promo-banner {
+        padding: 48px;
+      }
+
+      .promo-banner h2 {
+        font-size: 34px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .nav-links {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 64px;
+      }
+
+      .filter-card {
+        grid-template-columns: repeat(4, 1fr) 1.2fr;
+        gap: 10px;
+      }
+
+      .filter-item {
+        border-bottom: none;
+        border-right: 1px solid #f3f4f6;
+      }
+
+      .containe {
+        padding: 0 48px 50px;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .btn-book {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Refined Luxury Logo">
+      <span>REFINED LUXURY &amp; TAILOR</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="Destinations.html">Destinations</a>
+      <a href="safaris.html">Safari</a>
+      <a href="packages.html" class="active">Our Package</a> 
+      <a href="about.html">About Travel</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <button class="btn-book">Book Now</button>
+    <button class="menu-btn" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-label">Safari Packages</span>
+      <h1>Unforgettable<br>Tanzania Adventures</h1>
+      <p>Curated safari packages for every traveler — from short getaways to luxury wildlife expeditions.</p>
+      <a href="#packages" class="btn-explore">
+        Explore Packages <i class="fa-solid fa-arrow-right" style="font-size:12px;"></i>
+      </a>
+    </div>
+
+    <div class="trust-bar">
+      <div class="trust-inner">
+        <div class="trust-item">
+          <i class="fa-solid fa-paw"></i>
+          <div>
+            <h4>Best Price Guarantee</h4>
+            <p>Exceptional value</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <i class="fa-regular fa-calendar-check"></i>
+          <div>
+            <h4>Flexible Booking</h4>
+            <p>Travel on your terms</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div>
+            <h4>Safe & Secure</h4>
+            <p>Your safety is our priority</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-headset"></i>
+          <div>
+            <h4>24/7 Support</h4>
+            <p>Always here for you</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH FILTER BAR -->
+  <section class="filter-section">
+    <div class="filter-card">
+
+      <div class="filter-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <div style="flex:1; min-width:0;">
+          <label>Destination</label>
+          <select>
+            <option>All Parks</option>
+            <option>Serengeti</option>
+            <option>Ngorongoro Crater</option>
+            <option>Tarangire</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-item">
+        <i class="fa-solid fa-compass"></i>
+        <div style="flex:1; min-width:0;">
+          <label>Package Type</label>
+          <select>
+            <option>All Types</option>
+            <option>Wildlife Safari</option>
+            <option>Luxury Escape</option>
+            <option>Family Friendly</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-item">
+        <i class="fa-regular fa-calendar-days"></i>
+        <div style="flex:1; min-width:0;">
+          <label>Duration</label>
+          <select>
+            <option>Any Duration</option>
+            <option>1-3 Days</option>
+            <option>4-7 Days</option>
+            <option>8+ Days</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-item">
+        <i class="fa-solid fa-wallet"></i>
+        <div style="flex:1; min-width:0;">
+          <label>Budget</label>
+          <select>
+            <option>Any Budget</option>
+            <option>Under $1,500</option>
+            <option>$1,500 - $3,000</option>
+            <option>$3,000+</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Search Box Form -->
+      <form action="/search" method="GET" class="search-box">
+        <input 
+          type="text" 
+          name="query" 
+          class="search-input" 
+          placeholder="Search packages..." 
+          required
+        >
+        <button type="submit" class="btn-search">
+          Find Packages <i class="fa-solid fa-magnifying-glass" style="font-size:13px;"></i>
+        </button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- MAIN PACKAGES SECTION -->
+  <section class="packages-section" id="packages">
+    <div class="section-header">
+      <span class="section-label">Our Safari Packages</span>
+      <h2>Top-Rated Safari Experiences</h2>
+      <p>Handcrafted journeys. Unforgettable memories.</p>
+      <div class="section-icon">
+        <i class="fa-solid fa-hippo"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT CONTAINER -->
+  <div class="containe">
+    <div class="section-head">
+      <div class="section-left">
+        <div class="eyebrow">Explore Our Packages</div>
+        <h3>Find the Perfect Safari<br>for Your Adventure</h3>
+        <p>From thrilling migrations to peaceful getaways, our packages are designed to match your travel style and budget.</p>
+      </div>
+      <div class="section-right">
+        <div class="video-thumb">
+          <img src="images/video.jpg" alt="Wildebeest migration">
+          <a href="https://youtu.be/cbPfAgfguXc?si=GIo9s2dPqvPIln2r" target="_blank">
+            <div class="play-btn"><i class="fas fa-play"></i></div>
+          </a>
+        </div>
+        
+        
+        <div class="why-us">
+          <h4>Why Travel With Us?</h4>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> Curated Itineraries</li>
+            <li><i class="fas fa-check-circle"></i> Handpicked Lodges</li>
+            <li><i class="fas fa-check-circle"></i> Sustainable Tourism</li>
+            <li><i class="fas fa-check-circle"></i> Authentic Experiences</li>
+          </ul>
+          <a href="#">Learn More About Us →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+ <section class="sec-wrap">
+    <div class="container-box">
+      
+      <!-- Section Header -->
+      <div class="top-bar-flex">
+        <div>
+          <div class="sub-title">
+            <span class="sub-title-line"></span>
+            <span>Curated Luxury Safaris</span>
+          </div>
+          <h2 class="main-heading font-serif">Our Private Collection</h2>
+        </div>
+        <p class="header-desc">
+          Discover carefully curated safari itineraries. Every route can be fully customized according to your schedule, group size, and preferred level of comfort.
+        </p>
+      </div>
+
+      <!-- GRID OF 6 CARDS -->
+      <div class="expeditions-grid">
+        
+        <!-- CARD 1 -->
+        <div class="card-box">
+          <div class="img-frame">
+            <img src="images/Sanctuary.jpg" alt="The Great Migration Fly-In Sanctuary" class="card-img" />
+            <div class="img-shade"></div>
+            <span class="badge">Fly-In Safari</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title font-serif">The Great Migration Fly-In Sanctuary</h3>
+              <p class="card-desc">Experience an exclusive aerial safari connecting you directly from Singita Grumeti to the northern Serengeti.</p>
+            </div>
+            <div class="card-bottom">
+              <div>
+                <span class="price-label">Starting Price</span>
+                <span class="price-value">From $12,500 per person</span>
+              </div>
+              <label for="modal-toggle-1" class="btn-details">
+                Details <i class="fa-solid fa-arrow-right"></i>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card-box">
+          <div class="img-frame">
+            <img src="images/Private.jpg" alt="Zanzibar Private Ocean Villa Escape" class="card-img" />
+            <div class="img-shade"></div>
+            <span class="badge">Coastal Retreat</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title font-serif">Zanzibar Private Ocean Villa Escape</h3>
+              <p class="card-desc">Unwind in a private oceanfront villa complete with a dedicated butler, sunset boat cruises, and sandbank dinners.</p>
+            </div>
+            <div class="card-bottom">
+              <div>
+                <span class="price-label">Starting Price</span>
+                <span class="price-value">From $8,800 per person</span>
+              </div>
+              <label for="modal-toggle-2" class="btn-details">
+                Details <i class="fa-solid fa-arrow-right"></i>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card-box">
+          <div class="img-frame">
+            <img src="images/Peaks.jpg" alt="Helicopter Expedition" class="card-img" />
+            <div class="img-shade"></div>
+            <span class="badge">Helicopter & Mountains</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title font-serif">Helicopter Expedition & Kilimanjaro Peaks</h3>
+              <p class="card-desc">Soar above the glacier-capped peak of Mount Kilimanjaro in an Airbus H130 helicopter before landing for a champagne toast.</p>
+            </div>
+            <div class="card-bottom">
+              <div>
+                <span class="price-label">Starting Price</span>
+                <span class="price-value">From $16,000 per person</span>
+              </div>
+              <label for="modal-toggle-3" class="btn-details">
+                Details <i class="fa-solid fa-arrow-right"></i>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card-box">
+          <div class="img-frame">
+            <img src="images/Rim.jpg" alt="Ngorongoro Rim" class="card-img" />
+            <div class="img-shade"></div>
+            <span class="badge">Conservation & Culture</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title font-serif">Ngorongoro Rim & Crater Aristocracy</h3>
+              <p class="card-desc">Stay in lodges perched on the crater rim, enjoying early access into the crater before public gates open.</p>
+            </div>
+            <div class="card-bottom">
+              <div>
+                <span class="price-label">Starting Price</span>
+                <span class="price-value">From $11,200 per person</span>
+              </div>
+              <label for="modal-toggle-4" class="btn-details">
+                Details <i class="fa-solid fa-arrow-right"></i>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="card-box">
+          <div class="img-frame">
+            <img src="images/The Ultimate.jpg" alt="Bush & Beach" class="card-img" />
+            <div class="img-shade"></div>
+            <span class="badge">Fly-In Safari</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title font-serif">The Ultimate Bush & Beach Legacy Journey</h3>
+              <p class="card-desc">East Africa's premier expedition combining the wildlife of the Serengeti with 4 private days on Mafia Island.</p>
+            </div>
+            <div class="card-bottom">
+              <div>
+                <span class="price-label">Starting Price</span>
+                <span class="price-value">From $19,500 per person</span>
+              </div>
+              <label for="modal-toggle-5" class="btn-details">
+                Details <i class="fa-solid fa-arrow-right"></i>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="card-box">
+          <div class="img-frame">
+            <img src="images/Mnemba Island.jpg" alt="Mnemba Island" class="card-img" />
+            <div class="img-shade"></div>
+            <span class="badge">Coastal Retreat</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title font-serif">Mnemba Island Private Atoll Sanctuary</h3>
+              <p class="card-desc">A private island surrounded by coral reefs. Ultimate luxury paired with private scuba diving excursions.</p>
+            </div>
+            <div class="card-bottom">
+              <div>
+                <span class="price-label">Starting Price</span>
+                <span class="price-value">From $14,000 per person</span>
+              </div>
+              <label for="modal-toggle-6" class="btn-details">
+                Details <i class="fa-solid fa-arrow-right"></i>
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MODALS SECTION -->
+  <!-- MODAL 1 -->
+  <input type="checkbox" id="modal-toggle-1" class="modal-state" />
+  <div class="popup-overlay">
+    <div class="popup-card">
+      <label for="modal-toggle-1" class="modal-close-btn"><i class="fa-solid fa-xmark"></i></label>
+      <div class="popup-banner">
+        <img src="images/Sanctuary.jpg" />
+        <div class="popup-shade"></div>
+        <div class="popup-heading">
+          <span class="badge">FLY-IN SAFARI</span>
+          <h3 class="main-heading font-serif" style="font-size: 1.5rem; color: white; margin-top: 0.5rem;">The Great Migration Fly-In Sanctuary</h3>
+        </div>
+      </div>
+      <div class="popup-content">
+        <div class="popup-details">
+          <div class="detail-chip"><span class="icon-gold">♦</span> <span>8 Days / 7 Nights</span></div>
+          <div class="detail-chip"><span class="icon-gold">♦</span> <span>From $12,500 per person</span></div>
+          <div class="detail-chip"><i class="fa-solid fa-plane icon-gold"></i> <span>Private Flights Included</span></div>
+        </div>
+        <div>
+          <h4 class="modal-section-title font-serif">Package Highlights</h4>
+          <p style="color: #94A3B8; line-height: 1.6;">Experience an exclusive aerial safari connecting you directly from Singita Grumeti to the northern Serengeti. Includes game drives in a private 4x4 vehicle, dedicated butler service, and a hot air balloon safari at sunrise.</p>
+        </div>
+        <div>
+          <h4 class="modal-section-title font-serif">What's Included</h4>
+          <div class="perks-grid">
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Private Charter Flights (Arusha - Serengeti)</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Luxury private tented accommodations</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Private safari guide & 4x4 vehicle</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Serengeti Hot Air Balloon Safari</span></div>
+          </div>
+        </div>
+        <div class="popup-footer">
+          <label for="modal-toggle-1" class="btn-modal-close">CLOSE</label>
+          <a href="#contact" class="btn-modal-action">CUSTOMIZE THIS PACKAGE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2 -->
+  <input type="checkbox" id="modal-toggle-2" class="modal-state" />
+  <div class="popup-overlay">
+    <div class="popup-card">
+      <label for="modal-toggle-2" class="modal-close-btn"><i class="fa-solid fa-xmark"></i></label>
+      <div class="popup-banner">
+        <img src="images/Private.jpg" />
+        <div class="popup-shade"></div>
+        <div class="popup-heading">
+          <span class="badge">COASTAL RETREAT</span>
+          <h3 class="main-heading font-serif" style="font-size: 1.5rem; color: white; margin-top: 0.5rem;">Zanzibar Private Ocean Villa Escape</h3>
+        </div>
+      </div>
+      <div class="popup-content">
+        <div class="popup-details">
+          <div class="detail-chip"><span class="icon-gold">♦</span> <span>6 Days / 5 Nights</span></div>
+          <div class="detail-chip"><span class="icon-gold">♦</span> <span>From $8,800 per person</span></div>
+          <div class="detail-chip"><i class="fa-solid fa-ship icon-gold"></i> <span>Boat Cruise Included</span></div>
+        </div>
+        <div>
+          <h4 class="modal-section-title font-serif">Package Highlights</h4>
+          <p style="color: #94A3B8; line-height: 1.6;">Unwind in a private oceanfront villa complete with a personal butler and private chef, luxury sunset dhow cruises, and intimate sandbank dinners off the coast of Zanzibar.</p>
+        </div>
+        <div>
+          <h4 class="modal-section-title font-serif">What's Included</h4>
+          <div class="perks-grid">
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Private Ocean Villa Stay</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Private Chef & Butler Services</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Sunset Catamaran Cruise</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Private Sandbank Dinner</span></div>
+          </div>
+        </div>
+        <div class="popup-footer">
+          <label for="modal-toggle-2" class="btn-modal-close">CLOSE</label>
+          <a href="#contact" class="btn-modal-action">CUSTOMIZE THIS PACKAGE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3 -->
+  <input type="checkbox" id="modal-toggle-3" class="modal-state" />
+  <div class="popup-overlay">
+    <div class="popup-card">
+      <label for="modal-toggle-3" class="modal-close-btn"><i class="fa-solid fa-xmark"></i></label>
+      <div class="popup-banner">
+        <img src="images/Peaks.jpg" />Peaks.jpg
+        <div class="popup-shade"></div>
+        <div class="popup-heading">
+          <span class="badge">HELICOPTER & MOUNTAINS</span>
+          <h3 class="main-heading font-serif" style="font-size: 1.5rem; color: white; margin-top: 0.5rem;">Helicopter Expedition & Kilimanjaro Peaks</h3>
+        </div>
+      </div>
+      <div class="popup-content">
+        <div class="popup-details">
+          <div class="detail-chip"><span class="icon-gold">♦</span> <span>5 Days / 4 Nights</span></div>
+          <div class="detail-chip"><span class="icon-gold">♦</span> <span>From $16,000 per person</span></div>
+          <div class="detail-chip"><i class="fa-solid fa-helicopter icon-gold"></i> <span>Helicopter Included</span></div>
+        </div>
+        <div>
+          <h4 class="modal-section-title font-serif">Package Highlights</h4>
+          <p style="color: #94A3B8; line-height: 1.6;">Soar above the glacier-capped peak of Mount Kilimanjaro aboard an Airbus H130 helicopter before landing for a champagne toast at a luxury camp in Lake Manyara.</p>
+        </div>
+        <div>
+          <h4 class="modal-section-title font-serif">What's Included</h4>
+          <div class="perks-grid">
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Airbus H130 Helicopter Flight Above the Peak</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Mountain Summit Landing with Champagne</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Luxury Camp Stay at Lake Manyara</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Full Aviation & Ground Logistics Coordination</span></div>
+          </div>
+        </div>
+        <div class="popup-footer">
+          <label for="modal-toggle-3" class="btn-modal-close">CLOSE</label>
+          <a href="#contact" class="btn-modal-action">CUSTOMIZE THIS PACKAGE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4 -->
+  <input type="checkbox" id="modal-toggle-4" class="modal-state" />
+  <div class="popup-overlay">
+    <div class="popup-card">
+      <label for="modal-toggle-4" class="modal-close-btn"><i class="fa-solid fa-xmark"></i></label>
+      <div class="popup-banner">
+        <img src="images/Rim.jpg" />
+        <div class="popup-shade"></div>
+        <div class="popup-heading">
+          <span class="badge">CONSERVATION & CULTURE</span>
+          <h3 class="main-heading font-serif" style="font-size: 1.5rem; color: white; margin-top: 0.5rem;">Ngorongoro Rim & Crater Aristocracy</h3>
+        </div>
+      </div>
+      <div class="popup-content">
+        <div class="popup-details">
+          <div class="detail-chip"><span class="icon-gold">♦</span> <span>7 Days / 6 Nights</span></div>
+          <div class="detail-chip"><span class="icon-gold">♦</span> <span>From $11,200 per person</span></div>
+          <div class="detail-chip"><i class="fa-solid fa-shield-halved icon-gold"></i> <span>VIP Access</span></div>
+        </div>
+        <div>
+          <h4 class="modal-section-title font-serif">Package Highlights</h4>
+          <p style="color: #94A3B8; line-height: 1.6;">Stay in exclusive lodges on the crater rim, enjoying early access to the crater floor before public gates open, alongside private briefings with rhino conservation experts.</p>
+        </div>
+        <div>
+          <h4 class="modal-section-title font-serif">What's Included</h4>
+          <div class="perks-grid">
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Early Access to the Crater Floor</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Luxury Crater Rim Accommodations</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Private Briefing with Rhino Sanctuary Rangers</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Exclusive Maasai Cultural Immersion</span></div>
+          </div>
+        </div>
+        <div class="popup-footer">
+          <label for="modal-toggle-4" class="btn-modal-close">CLOSE</label>
+          <a href="#contact" class="btn-modal-action">CUSTOMIZE THIS PACKAGE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 5 -->
+  <input type="checkbox" id="modal-toggle-5" class="modal-state" />
+  <div class="popup-overlay">
+    <div class="popup-card">
+      <label for="modal-toggle-5" class="modal-close-btn"><i class="fa-solid fa-xmark"></i></label>
+      <div class="popup-banner">
+        <img src="images/The Ultimate.jpg" />
+        <div class="popup-shade"></div>
+        <div class="popup-heading">
+          <span class="badge">FLY-IN SAFARI</span>
+          <h3 class="main-heading font-serif" style="font-size: 1.5rem; color: #FFFFFF; margin-top: 0.5rem;">The Ultimate Bush & Beach Legacy Journey</h3>
+        </div>
+      </div>
+      <div class="popup-content">
+        <div class="popup-details">
+          <div class="detail-chip"><span class="icon-gold">♦</span> <span>12 Days / 11 Nights</span></div>
+          <div class="detail-chip"><span class="icon-gold">♦</span> <span>From $19,500 per person</span></div>
+          <div class="detail-chip"><i class="fa-solid fa-plane icon-gold"></i> <span>All Transfers Included</span></div>
+        </div>
+        <div>
+          <h4 class="modal-section-title font-serif">Package Highlights</h4>
+          <p style="color: #94A3B8; line-height: 1.6;">East Africa's premier journey combining the iconic wildlife of Serengeti and Ngorongoro Crater with 4 days of private relaxation on Mafia Island.</p>
+        </div>
+        <div>
+          <h4 class="modal-section-title font-serif">What's Included</h4>
+          <div class="perks-grid">
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Big Five Safari in Serengeti & Ngorongoro</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>4 Days Relaxation on Mafia Island</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Private Whale Shark Swimming Excursion</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>All Internal Flight Transfers</span></div>
+          </div>
+        </div>
+        <div class="popup-footer">
+          <label for="modal-toggle-5" class="btn-modal-close">CLOSE</label>
+          <a href="#contact" class="btn-modal-action">CUSTOMIZE THIS PACKAGE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 6 -->
+  <input type="checkbox" id="modal-toggle-6" class="modal-state" />
+  <div class="popup-overlay">
+    <div class="popup-card">
+      <label for="modal-toggle-6" class="modal-close-btn"><i class="fa-solid fa-xmark"></i></label>
+      <div class="popup-banner">
+        <img src="images/Mnemba Island.jpg" />
+        <div class="popup-shade"></div>
+        <div class="popup-heading">
+          <span class="badge">COASTAL RETREAT</span>
+          <h3 class="main-heading font-serif" style="font-size: 1.5rem; color: #FFFFFF; margin-top: 0.5rem;">Mnemba Island Private Atoll Sanctuary</h3>
+        </div>
+      </div>
+      <div class="popup-content">
+        <div class="popup-details">
+          <div class="detail-chip"><span class="icon-gold">♦</span> <span>5 Days / 4 Nights</span></div>
+          <div class="detail-chip"><span class="icon-gold">♦</span> <span>From $14,000 per person</span></div>
+          <div class="detail-chip"><i class="fa-solid fa-water icon-gold"></i> <span>Private Island</span></div>
+        </div>
+        <div>
+          <h4 class="modal-section-title font-serif">Package Highlights</h4>
+          <p style="color: #94A3B8; line-height: 1.6;">A private island sanctuary ringed by vibrant coral reefs. Barefoot luxury combined with private scuba diving excursions and romantic beachside dining.</p>
+        </div>
+        <div>
+          <h4 class="modal-section-title font-serif">What's Included</h4>
+          <div class="perks-grid">
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Luxury Island Bandas Accommodation</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>PADI Scuba Diving Excursions</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Beachside Fine Dining & Premium Beverages</span></div>
+            <div class="perk-row"><i class="fa-solid fa-check icon-gold"></i> <span>Helicopter / Boat Transfers to the Island</span></div>
+          </div>
+        </div>
+        <div class="popup-footer">
+          <label for="modal-toggle-6" class="btn-modal-close">CLOSE</label>
+          <a href="#contact" class="btn-modal-action">CUSTOMIZE THIS PACKAGE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PROMOTIONAL BANNER -->
+  <section class="promo-section">
+    <div class="promo-banner">
+      <div class="promo-inner">
+        <div>
+          <span class="promo-badge">Limited Time Offer</span>
+          <h2>Serengeti Exclusive Package</h2>
+          <p>Book now and save up to 20% on selected safari adventures.</p>
+        </div>
+        <div class="promo-right">
+          <div class="countdown">
+            <div class="countdown-box">
+              <span>12</span>
+              <span>Days</span>
+            </div>
+            <div class="countdown-box">
+              <span>14</span>
+              <span>Hours</span>
+            </div>
+            <div class="countdown-box">
+              <span>32</span>
+              <span>Min</span>
+            </div>
+            <div class="countdown-box">
+              <span>18</span>
+              <span>Sec</span>
+            </div>
+          </div>
+          <a href="#" class="btn-gold">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WHY BOOK WITH US -->
+  <section class="why-section">
+    <div class="why-card">
+      <div class="why-img">
+        <img src="images/safar.jpg" alt="Leopard in the wild">
+      </div>
+      <div class="why-content">
+        <h2>Why Book With Us?</h2>
+        <div class="why-grid">
+          <div class="why-item">
+            <i class="fa-solid fa-gem"></i>
+            <h4>Premium Experiences</h4>
+            <p>Handpicked safari packages</p>
+          </div>
+          <div class="why-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h4>Safe & Secure</h4>
+            <p>Trusted local partners</p>
+          </div>
+          <div class="why-item">
+            <i class="fa-solid fa-headset"></i>
+            <h4>24/7 Support</h4>
+            <p>We're here for you</p>
+          </div>
+          <div class="why-item">
+            <i class="fa-solid fa-leaf"></i>
+            <h4>Sustainable Travel</h4>
+            <p>Protecting Africa's natural beauty</p>
+          </div>
+        </div>
+        <div class="why-btn-wrap">
+          <a href="#" class="btn-gold">Explore More <i class="fa-solid fa-paper-plane"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+ <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/255700000000?text=Hello!%20I%20am%20interested%20in%20planning%20a%20safari%20tour." target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with an Expert</span>
+    </a>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Refined Luxury & Tailor</h3>
+        <p>
+          Experience the magic of Tanzania, from the majestic Serengeti to Zanzibar's white beaches, on an unforgettable safari journey tailored to your exact preferences.
+        </p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/emmanuelyohana" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/emmanuel147322" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/255769128208" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.youtube.com/emmanuely" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Destinations.html">Destinations</a></li>
+          <li><a href="#">Safari Packages</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <ul class="contact-list">
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+            <span>Arusha, Tanzania</span>
+          </li>
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+            <span>+255 769 128 208</span>
+          </li>
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+            <span>+255 663 613 428</span>
+          </li>
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+            <span>info@refinedluxurytailor.com</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Newsletter</h3>
+        <p style="margin-bottom: 15px;">Subscribe for exclusive luxury safari deals and travel tips.</p>
+        <div style="display: flex; gap: 6px;">
+          <input type="email" placeholder="Your email..." style="padding: 10px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: white; width: 100%; font-size: 0.85rem;">
+          <button style="background: #e05d00; border: none; padding: 10px 16px; border-radius: 6px; color: #09100b; font-weight: bold; cursor: pointer;"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Refined Luxury &amp; Tailor Expedition. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

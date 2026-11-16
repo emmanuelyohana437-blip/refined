@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemwe & Michamvi Sanctuary | Zanzibar Luxury Eco Escape</title>
+
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Root Variables & Design Tokens */
+        :root {
+            --bg-deep: #020b14;
+            --bg-dark: #061524;
+            --bg-card: rgba(11, 15, 25, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --sapphire-blue: #0099ff;
+            --teal-glow: #00e5ff;
+            --sand-gold: #f4a261;
+            --coral-rose: #e76f51;
+            --text-light: #ffffff;
+            --text-muted: #94a3b8;
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-glow: 0 20px 40px rgba(11, 15, 25, 0.85);
+            --radius-xl: 28px;
+            --radius-lg: 18px;
+            --radius-md: 12px;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Base Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-light);
+            line-height: 1.65;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 229, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(244, 162, 97, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(231, 111, 81, 0.05) 0%, transparent 50%);
+        }
+
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+ .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 23px 3%;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #d1d5db;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      text-decoration: none;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ff6b00;
+    }
+
+    .btn-book {
+      background-color: #451f05;
+      color: #ffffff;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-book:hover {
+      background-color: #ff6b00;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35);
+    }
+
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transition: var(--transition);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 229, 255, 0.4);
+            transform: translateY(-5px);
+            box-shadow: var(--glass-glow);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg,  #451f05,  #451f05);
+            color: #ffffff;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px  #451f05;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 107, 0, 0.35);
+            background: linear-gradient(135deg, #ff6b00 , #ff6b00 );
+        }
+
+        .btn-outline {
+            border: 1px solid var(--glass-border);
+            background: var(--bg-glass);
+            color: var(--text-light);
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--teal-glow);
+            color: var(--teal-glow);
+            background: rgba(0, 229, 255, 0.1);
+        }
+
+   
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding-top: 160px;
+            padding-bottom: 90px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(180deg, rgba(2, 11, 20, 0.4) 0%, var(--bg-deep) 100%),
+                        url('images/Bays .jpg') center/cover no-repeat fixed;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(0deg, var(--bg-deep) 0%, transparent 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(11, 15, 25, 0.85);
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+        }
+
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--teal-glow);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .pulse-dot::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: var(--teal-glow);
+            opacity: 0.6;
+            animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes ping {
+            75%, 100% { transform: scale(2.2); opacity: 0; }
+        }
+
+        .hero-title {
+            font-size: clamp(2.8rem, 5vw, 4.6rem);
+            line-height: 1.08;
+            margin-bottom: 22px;
+            font-weight: 800;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, #ffffff 0%, var(--teal-glow) 50%, var(--sand-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            max-width: 620px;
+        }
+
+        .hero-stats-card {
+            padding: 32px;
+            border-radius: var(--radius-xl);
+            background: rgba(11, 15, 25, 0.85);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 18px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            border-color: var(--teal-glow);
+            background: rgba(0, 229, 255, 0.05);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--sand-gold);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-padding {
+            padding: 110px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 740px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-subtitle {
+            color: var(--teal-glow);
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        /* Tide & Bathymetry Visualizer */
+        .bathymetry-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .bath-card {
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bath-card.matemwe {
+            border: 1px solid var(--teal-glow);
+            background: linear-gradient(165deg, rgba(2, 39, 43, 0.12) 0%, rgba(6, 21, 36, 0.9) 100%);
+        }
+
+        .bath-card.michamvi {
+            border: 1px solid var(--coral-rose);
+            background: linear-gradient(165deg, rgba(231, 111, 81, 0.12) 0%, rgba(6, 21, 36, 0.9) 100%);
+        }
+
+        .bath-badge {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-matemwe {
+            background: rgba(17, 67, 71, 0.2);
+            color: var(--teal-glow);
+        }
+
+        .badge-michamvi {
+            background: rgba(231, 111, 81, 0.2);
+            color: var(--coral-rose);
+        }
+
+        .water-diagram {
+            height: 130px;
+            margin: 24px 0;
+            border-radius: var(--radius-md);
+            position: relative;
+            overflow: hidden;
+            background: rgba(2, 11, 20, 0.7);
+            border: 1px solid var(--glass-border);
+        }
+
+        .water-fill-matemwe {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(12, 67, 73, 0.6) 0%, rgba(24, 63, 87, 0.85) 100%);
+            animation: waterWave 4s ease-in-out infinite alternate;
+        }
+
+        .water-fill-michamvi {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(244, 162, 97, 0.5) 0%, rgba(231, 111, 81, 0.8) 100%);
+            animation: waterWave 5s ease-in-out infinite alternate-reverse;
+        }
+
+        .coral-reef-shelf {
+            position: absolute;
+            bottom: 0;
+            left: 30%;
+            width: 40%;
+            height: 45%;
+            background: rgba(244, 162, 97, 0.4);
+            border-top: 2px dashed rgba(255, 255, 255, 0.5);
+            border-radius: 12px 12px 0 0;
+        }
+
+        .bay-mangrove-bed {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 35%;
+            background: linear-gradient(90deg, transparent 20%, rgba(2, 128, 144, 0.6) 100%);
+        }
+
+        @keyframes waterWave {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(8px); }
+        }
+
+        .bath-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .bath-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+
+        .check-icon { color: var(--teal-glow); }
+
+        /* Pure CSS Radio Controller Tabs */
+        .tab-controller {
+            display: none;
+        }
+
+        .tab-menu {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: var(--text-light);
+            padding: 14px 26px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--teal-glow);
+            color: var(--teal-glow);
+        }
+
+        /* Radio Checked State Styling */
+        #tab1:checked ~ .tab-menu label[for="tab1"],
+        #tab2:checked ~ .tab-menu label[for="tab2"],
+        #tab3:checked ~ .tab-menu label[for="tab3"],
+        #tab4:checked ~ .tab-menu label[for="tab4"] {
+            color: var(--bg-deep);
+            border-color: var(--teal-glow);
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .tab-panel-container {
+            position: relative;
+        }
+
+        .tab-panel {
+            display: none;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 40px;
+            align-items: center;
+            padding: 40px;
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #tab1:checked ~ .tab-panel-container #panel1,
+        #tab2:checked ~ .tab-panel-container #panel2,
+        #tab3:checked ~ .tab-panel-container #panel3,
+        #tab4:checked ~ .tab-panel-container #panel4 {
+            display: grid;
+        }
+
+        .panel-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .panel-tag {
+            color: var(--sand-gold);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .panel-title {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .panel-desc {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 1rem;
+        }
+
+        .panel-meta {
+            display: flex;
+            gap: 24px;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 20px;
+        }
+
+        .meta-box span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .meta-box strong {
+            color: var(--teal-glow);
+            font-size: 1rem;
+        }
+
+        /* Comparison Section */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .sanctuary-card {
+            padding: 38px;
+        }
+
+        .sanctuary-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .sanctuary-name {
+            font-size: 1.9rem;
+        }
+
+        .sanctuary-tag {
+            background: rgba(244, 162, 97, 0.2);
+            color: var(--sand-gold);
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .score-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .score-row {
+            display: grid;
+            grid-template-columns: 130px 1fr 40px;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .score-bar-bg {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .score-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--teal-glow), var(--coral-rose));
+            border-radius: 10px;
+        }
+
+        .score-val {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--teal-glow);
+            text-align: right;
+        }
+
+        /* Spotter Grid */
+        .spotter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .spotter-card {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 330px;
+            display: block;
+        }
+
+        .spotter-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .spotter-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .spotter-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 35%, rgba(2, 11, 20, 0.95) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+        }
+
+        /* Pure CSS Target Lightbox Modals */
+        .css-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(2, 11, 20, 0.92);
+            backdrop-filter: blur(14px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+            padding: 20px;
+        }
+
+        .css-modal:target {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: var(--bg-dark);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            max-width: 650px;
+            width: 100%;
+            padding: 38px;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: var(--coral-rose);
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .price-card {
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border: 1px solid var(--teal-glow);
+            background: linear-gradient(180deg, rgba(10, 15, 29, 0.6) 0%, rgba(10, 15, 29, 0.85) 100%);
+        }
+
+        .price-tag {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-light);
+            margin: 16px 0;
+        }
+
+        .price-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .price-features li {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* FAQ Accordion */
+        .accordion-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: var(--bg-card);
+        }
+
+        .accordion-checkbox {
+            display: none;
+        }
+
+        .accordion-label {
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: var(--transition);
+        }
+
+        .accordion-label:hover {
+            color: var(--teal-glow);
+        }
+
+        .accordion-icon {
+            transition: transform 0.4s ease;
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 24px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .accordion-checkbox:checked ~ .accordion-body {
+            max-height: 250px;
+            padding: 0 24px 20px 24px;
+        }
+
+        .accordion-checkbox:checked ~ .accordion-label .accordion-icon {
+            transform: rotate(180deg);
+            color: var(--teal-glow);
+        }
+
+    </style>
+</head>
+<body>
+
+     <header class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Company Logo">
+      <span class="logo-text">REFINED LUXURY &amp; TAILOR</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="Destinations.html" class="active">Destinations</a>
+      <a href="safaris.html">Safari</a>
+      <a href="packages.html">Our Package</a>
+      <a href="about.html">About Travel</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <button class="btn-book">Book Now</button>
+  </header>
+
+    <header class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="live-badge">
+                    <div class="pulse-dot"></div>
+                    <span style="font-size:0.85rem; font-weight:700; color:var(--teal-glow); letter-spacing:1px; text-transform:uppercase;">East Coast Marine Reserve</span>
+                </div>
+                <h1 class="hero-title">
+                    Serene Coral Reefs & Hidden Bays <span>Matemwe & Michamvi</span>
+                </h1>
+                <p class="hero-desc">
+                    Experience Zanzibar's quietest eco sanctuaries: from Matemwe's vast turquoise coral lagoon facing Mnemba Atoll to Michamvi's sheltered mangroves and Kae Sunset sandbars.
+                </p>
+                <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                    <a href="#itinerary" class="btn-primary"><i class="fa-solid fa-calendar-day"></i> Explore Day Timeline</a>
+                    <a href="#bathymetry" class="btn-outline">Tide & Lagoon Dynamics</a>
+                </div>
+            </div>
+
+            <!-- Hero Floating Highlights Card -->
+            <div class="hero-stats-card glass-card">
+                <h3 class="font-serif" style="font-size:1.5rem; margin-bottom:20px; color:white; text-align:center;">Sanctuary Quick Facts</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">Mnemba</div>
+                        <div class="stat-label">Coral Reef Gate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">360°</div>
+                        <div class="stat-label">Chwaka Bay Views</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">29°C</div>
+                        <div class="stat-label">Lagoon Temp</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Kae</div>
+                        <div class="stat-label">Sunset Sandbar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="bathymetry" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Tide & Sanctuary Mechanics</span>
+                <h2 class="section-title">Matemwe Reef Lagoon vs. Michamvi Sheltered Bay</h2>
+                <p style="color:var(--text-muted);">Discover how outer coral barriers and inner bay mangroves create distinct aquatic micro-environments.</p>
+            </div>
+
+            <div class="bathymetry-grid">
+                <!-- Matemwe Lagoon -->
+                <div class="glass-card bath-card matemwe">
+                    <span class="bath-badge badge-matemwe">Matemwe Coast (North-East)</span>
+                    <h3 style="font-size:1.8rem; margin-bottom:10px;">Outer Coral Barrier & Reef Lagoon</h3>
+                    <p style="color:var(--text-muted); font-size:0.95rem;">An offshore barrier reef breaks ocean swells, creating a calm, turquoise lagoon ideal for high-tide swimming and Mnemba boat launches.</p>
+                    
+                    <div class="water-diagram">
+                        <div class="water-fill-matemwe"></div>
+                        <div class="coral-reef-shelf"></div>
+                    </div>
+
+                    <ul class="bath-list">
+                        <li><i class="fa-solid fa-check check-icon"></i> High-tide swimming in warm turquoise lagoon</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Direct gateway to Mnemba Atoll marine reserve</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Low-tide sea starfish and reef walking tours</li>
+                    </ul>
+                </div>
+
+                <!-- Michamvi Peninsula -->
+                <div class="glass-card bath-card michamvi">
+                    <span class="bath-badge badge-michamvi">Michamvi Kae & Pingwe (East)</span>
+                    <h3 style="font-size:1.8rem; margin-bottom:10px;">Sheltered Bay & Mangrove Haven</h3>
+                    <p style="color:var(--text-muted); font-size:0.95rem;">Nestled on Chwaka Bay, Michamvi Kae faces west over calm waters, offering rare East Coast sunsets and tranquil mangrove channels.</p>
+                    
+                    <div class="water-diagram">
+                        <div class="water-fill-michamvi"></div>
+                        <div class="bay-mangrove-bed"></div>
+                    </div>
+
+                    <ul class="bath-list">
+                        <li><i class="fa-solid fa-check check-icon"></i> Sheltered water ideal for paddleboarding & kayaking</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Unique East Coast west-facing sunset sandbar</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Lush mangrove forests teeming with birdlife</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="itinerary" class="section-padding" style="background: rgba(0,0,0,0.25);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Curated Sanctuary Day</span>
+                <h2 class="section-title">Matemwe & Michamvi Escape Timeline</h2>
+                <p style="color:var(--text-muted);">Select a time of day to preview your curated eco-sanctuary experience.</p>
+            </div>
+
+            <!-- Pure CSS Controller Radio Hacks -->
+            <input type="radio" id="tab1" name="timeline-tabs" class="tab-controller" checked>
+            <input type="radio" id="tab2" name="timeline-tabs" class="tab-controller">
+            <input type="radio" id="tab3" name="timeline-tabs" class="tab-controller">
+            <input type="radio" id="tab4" name="timeline-tabs" class="tab-controller">
+
+            <div class="tab-menu">
+                <label for="tab1" class="tab-btn"><i class="fa-solid fa-sun"></i> 06:30 AM Sunrise Reef</label>
+                <label for="tab2" class="tab-btn"><i class="fa-solid fa-water"></i> 10:30 AM Lagoon Walk</label>
+                <label for="tab3" class="tab-btn"><i class="fa-solid fa-tree"></i> 02:00 PM Mangrove Kayak</label>
+                <label for="tab4" class="tab-btn"><i class="fa-solid fa-cloud-sun"></i> 05:30 PM Kae Sunset</label>
+            </div>
+
+            <div class="tab-panel-container">
+                <!-- Panel 1 -->
+                <div class="glass-card tab-panel" id="panel1">
+                    <img src="images/Matemwe Lagoon.jpg" alt="Sunrise Reef" class="panel-img">
+                    <div>
+                        <span class="panel-tag">06:30 AM • Sunrise Reef</span>
+                        <h3 class="panel-title">Matemwe Lagoon & Mnemba Atoll Boat Launch</h3>
+                        <p class="panel-desc">Depart early from Matemwe's powder-soft sands as the golden sun rises over the barrier reef. Snorkel Mnemba Atoll's clear waters to swim with wild dolphins, sea turtles, and colorful reef fish.</p>
+                        <div class="panel-meta">
+                            <div class="meta-box">
+                                <span>Prime Location</span>
+                                <strong>Matemwe Beach & Mnemba Ring</strong>
+                            </div>
+                            <div class="meta-box">
+                                <span>Highlight</span>
+                                <strong>Wild Dolphin Encounters</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 2 -->
+                <div class="glass-card tab-panel" id="panel2">
+                    <img src="images/Low-Tide.jpg" alt="Lagoon Sandbar" class="panel-img">
+                    <div>
+                        <span class="panel-tag">10:30 AM • Tidal Walk</span>
+                        <h3 class="panel-title">Low-Tide Coral Reef & Starfish Eco-Walk</h3>
+                        <p class="panel-desc">As the tide recedes in Matemwe, walk guided by local naturalists across the shallow coral lagoon. Discover vibrant blue starfish, sea cucumbers, and delicate anemones in transparent tide pools.</p>
+                        <div class="panel-meta">
+                            <div class="meta-box">
+                                <span>Prime Location</span>
+                                <strong>Matemwe Reef Flats</strong>
+                            </div>
+                            <div class="meta-box">
+                                <span>Highlight</span>
+                                <strong>Guided Tide Pool Exploration</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 3 -->
+                <div class="glass-card tab-panel" id="panel3">
+                    <img src="images/Michamvi Mangrove.jpg" alt="Mangrove Kayak" class="panel-img">
+                    <div>
+                        <span class="panel-tag">02:00 PM • Bay Exploration</span>
+                        <h3 class="panel-title">Michamvi Mangrove Kayaking & Hidden Bay</h3>
+                        <p class="panel-desc">Cross over to the Michamvi Peninsula and glide silently in stand-up paddleboards or kayaks through Chwaka Bay's lush mangrove channels. Unwind on secluded, pine-fringed beaches.</p>
+                        <div class="panel-meta">
+                            <div class="meta-box">
+                                <span>Prime Location</span>
+                                <strong>Chwaka Bay Mangroves</strong>
+                            </div>
+                            <div class="meta-box">
+                                <span>Highlight</span>
+                                <strong>Eco Kayak & Bird Watching</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 4 -->
+                <div class="glass-card tab-panel" id="panel4">
+                    <img src="images/Kae Funk.jpg" alt="Kae Sunset" class="panel-img">
+                    <div>
+                        <span class="panel-tag">05:30 PM • Sunset Firefly Lounge</span>
+                        <h3 class="panel-title">Kae Funk Sunset Dhow & Beach Lounge</h3>
+                        <p class="panel-desc">Gather at Michamvi Kae Sandbar to witness a magnificent sunset over Chwaka Bay—the only spot on Zanzibar's East Coast where the sun drops directly into the sea. Enjoy bonfire acoustic vibes.</p>
+                        <div class="panel-meta">
+                            <div class="meta-box">
+                                <span>Prime Location</span>
+                                <strong>Michamvi Kae Sandbar</strong>
+                            </div>
+                            <div class="meta-box">
+                                <span>Highlight</span>
+                                <strong>West-Facing East Coast Sunset</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="matrix" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Head-to-Head Sanctuary Comparison</span>
+                <h2 class="section-title">Matemwe vs. Michamvi Feature Matrix</h2>
+                <p style="color:var(--text-muted);">Compare key traits to craft your balanced East Coast sanctuary experience.</p>
+            </div>
+
+            <div class="comparison-grid">
+                <!-- Matemwe -->
+                <div class="glass-card sanctuary-card">
+                    <div class="sanctuary-header">
+                        <h3 class="sanctuary-name">Matemwe Sanctuary</h3>
+                        <span class="sanctuary-tag">Coral Lagoon & Marine Life</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;">Renowned for its long stretches of powder sand, seaweed farming traditions, and direct proximity to Mnemba Atoll.</p>
+                    
+                    <div class="score-list">
+                        <div class="score-row">
+                            <span style="font-size:0.85rem; color:var(--text-muted);">Reef Snorkeling</span>
+                            <div class="score-bar-bg"><div class="score-bar-fill" style="width: 98%;"></div></div>
+                            <span class="score-val">9.8</span>
+                        </div>
+                        <div class="score-row">
+                            <span style="font-size:0.85rem; color:var(--text-muted);">High-Tide Swim</span>
+                            <div class="score-bar-bg"><div class="score-bar-fill" style="width: 88%;"></div></div>
+                            <span class="score-val">8.8</span>
+                        </div>
+                        <div class="score-row">
+                            <span style="font-size:0.85rem; color:var(--text-muted);">Tranquility</span>
+                            <div class="score-bar-bg"><div class="score-bar-fill" style="width: 95%;"></div></div>
+                            <span class="score-val">9.5</span>
+                        </div>
+                        <div class="score-row">
+                            <span style="font-size:0.85rem; color:var(--text-muted);">Cultural Vibe</span>
+                            <div class="score-bar-bg"><div class="score-bar-fill" style="width: 92%;"></div></div>
+                            <span class="score-val">9.2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Michamvi -->
+                <div class="glass-card sanctuary-card">
+                    <div class="sanctuary-header">
+                        <h3 class="sanctuary-name">Michamvi Peninsula</h3>
+                        <span class="sanctuary-tag">Sunset Bay & Mangroves</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;">A hidden gem offering calm bay waters, mangrove eco-tours, total seclusion, and front-row seats for Chwaka Bay sunsets.</p>
+
+                    <div class="score-list">
+                        <div class="score-row">
+                            <span style="font-size:0.85rem; color:var(--text-muted);">Reef Snorkeling</span>
+                            <div class="score-bar-bg"><div class="score-bar-fill" style="width: 82%;"></div></div>
+                            <span class="score-val">8.2</span>
+                        </div>
+                        <div class="score-row">
+                            <span style="font-size:0.85rem; color:var(--text-muted);">Calm Waters</span>
+                            <div class="score-bar-bg"><div class="score-bar-fill" style="width: 98%;"></div></div>
+                            <span class="score-val">9.8</span>
+                        </div>
+                        <div class="score-row">
+                            <span style="font-size:0.85rem; color:var(--text-muted);">Sunset Views</span>
+                            <div class="score-bar-bg"><div class="score-bar-fill" style="width: 100%;"></div></div>
+                            <span class="score-val">10</span>
+                        </div>
+                        <div class="score-row">
+                            <span style="font-size:0.85rem; color:var(--text-muted);">Eco Kayaking</span>
+                            <div class="score-bar-bg"><div class="score-bar-fill" style="width: 96%;"></div></div>
+                            <span class="score-val">9.6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="marine" class="section-padding" style="background: rgba(0,0,0,0.25);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Sanctuary Spotter</span>
+                <h2 class="section-title">Eco Encounters & Marine Spotter</h2>
+                <p style="color:var(--text-muted);">Click any card to open detailed ecosystem information (Pure CSS Modal Lightbox).</p>
+            </div>
+
+            <div class="spotter-grid">
+                <!-- Card 1 -->
+                <a href="#modal-mnemba" class="spotter-card glass-card">
+                    <img src="images/Atoll.jpg" alt="Mnemba Coral">
+                    <div class="spotter-overlay">
+                        <span style="color:var(--teal-glow); font-size:0.75rem; text-transform:uppercase; font-weight:700;">Matemwe Gateway</span>
+                        <h4 style="font-size:1.4rem; color:white;">Mnemba Atoll Reef</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted);">Click to view marine reserve guidelines & species info.</p>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="#modal-kae" class="spotter-card glass-card">
+                    <img src="images/Kae Sunset Sandbar.jpg" alt="Kae Sunset">
+                    <div class="spotter-overlay">
+                        <span style="color:var(--sand-gold); font-size:0.75rem; text-transform:uppercase; font-weight:700;">Michamvi Kae</span>
+                        <h4 style="font-size:1.4rem; color:white;">Kae Sunset Sandbar</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted);">Click to inspect sandbar access & twilight times.</p>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="#modal-mangrove" class="spotter-card glass-card">
+                    <img src="images/Chwaka Bay.jpg" alt="Mangrove Ecosystem">
+                    <div class="spotter-overlay">
+                        <span style="color:var(--coral-rose); font-size:0.75rem; text-transform:uppercase; font-weight:700;">Chwaka Bay</span>
+                        <h4 style="font-size:1.4rem; color:white;">Mangrove Ecosystem</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted);">Click to inspect mangrove conservation details.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pure CSS Target Lightbox Modals -->
+    <div id="modal-mnemba" class="css-modal">
+        <div class="modal-content">
+            <a href="#marine" class="modal-close">&times;</a>
+            <h3 style="font-size:1.8rem; margin-bottom:12px; color:var(--teal-glow);">Mnemba Atoll Marine Sanctuary</h3>
+            <p style="color:var(--text-muted); margin-bottom:16px;">Located directly off Matemwe Beach, Mnemba Atoll is an oval conservation ring protected by local marine rangers. Home to bottlenose dolphins, green sea turtles, clownfish, and over 600 species of tropical fish.</p>
+            <span style="display:inline-block; padding:6px 16px; background:rgba(0,229,255,0.15); color:var(--teal-glow); border-radius:50px; font-size:0.85rem; font-weight:700;">Best Visibility: Morning High Tide</span>
+        </div>
+    </div>
+
+    <div id="modal-kae" class="css-modal">
+        <div class="modal-content">
+            <a href="#marine" class="modal-close">&times;</a>
+            <h3 style="font-size:1.8rem; margin-bottom:12px; color:var(--sand-gold);">Kae Sunset Sandbar & Peninsula</h3>
+            <p style="color:var(--text-muted); margin-bottom:16px;">Situated at Michamvi's western tip, Kae Sandbar offers unobstructed views across Chwaka Bay. Low tides reveal pristine white sand spits surrounded by shallow warm sea pools.</p>
+            <span style="display:inline-block; padding:6px 16px; background:rgba(244,162,97,0.15); color:var(--sand-gold); border-radius:50px; font-size:0.85rem; font-weight:700;">Golden Hour: 05:15 PM - 06:45 PM</span>
+        </div>
+    </div>
+
+    <div id="modal-mangrove" class="css-modal">
+        <div class="modal-content">
+            <a href="#marine" class="modal-close">&times;</a>
+            <h3 style="font-size:1.8rem; margin-bottom:12px; color:var(--coral-rose);">Chwaka Bay Mangrove Sanctuary</h3>
+            <p style="color:var(--text-muted); margin-bottom:16px;">Connecting Michamvi to Jozani National Park, this vital wetland system filters ocean water, buffers coastal erosion, and acts as a nursery for young reef marine life.</p>
+            <span style="display:inline-block; padding:6px 16px; background:rgba(231,111,81,0.15); color:var(--coral-rose); border-radius:50px; font-size:0.85rem; font-weight:700;">Eco Tour: High-Tide Kayaking</span>
+        </div>
+    </div>
+
+    <section id="pricing" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Sanctuary Packages</span>
+                <h2 class="section-title">Select Your Sanctuary Tier</h2>
+                <p style="color:var(--text-muted);">Carefully crafted eco-experiences for every style of escape.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Backpacker -->
+                <div class="glass-card price-card">
+                    <div>
+                        <span style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; font-weight:700;">Eco Explorer</span>
+                        <h3 style="font-size:1.6rem; margin-top:4px;">Lagoon Backpacker</h3>
+                        <div class="price-tag">$55 <span style="font-size:1rem; color:var(--text-muted); font-family:sans-serif;">/ person</span></div>
+                        <ul class="price-features">
+                            <li><i class="fa-solid fa-check check-icon"></i> Shared Stone Town / Nungwi Transfer</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Guided Matemwe Tide Pool Walk</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Michamvi Kae Sunset Lounge Ticket</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Local Swahili Lunch Voucher</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn-outline" style="justify-content:center;">Book Eco Explorer</a>
+                </div>
+
+                <!-- Featured Boutique -->
+                <div class="glass-card price-card featured">
+                    <div>
+                        <span style="font-size:0.8rem; color:var(--teal-glow); text-transform:uppercase; letter-spacing:1px; font-weight:700;">Most Recommended</span>
+                        <h3 style="font-size:1.6rem; margin-top:4px;">Boutique Eco-Luxe</h3>
+                        <div class="price-tag" style="color:var(--teal-glow);">$145 <span style="font-size:1rem; color:var(--text-muted); font-family:sans-serif;">/ person</span></div>
+                        <ul class="price-features">
+                            <li><i class="fa-solid fa-check check-icon"></i> Private AC Vehicle Transfer</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Mnemba Atoll Snorkeling Boat Tour</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Chwaka Bay Guided Mangrove Kayaking</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Seafood Lunch at Michamvi Beach</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn-primary" style="justify-content:center;">Book Boutique Escape</a>
+                </div>
+
+                <!-- Ultra Luxury Yacht -->
+                <div class="glass-card price-card">
+                    <div>
+                        <span style="font-size:0.8rem; color:var(--sand-gold); text-transform:uppercase; letter-spacing:1px; font-weight:700;">VIP Exclusive</span>
+                        <h3 style="font-size:1.6rem; margin-top:4px;">Private Dhow Charter</h3>
+                        <div class="price-tag">$390 <span style="font-size:1rem; color:var(--text-muted); font-family:sans-serif;">/ person</span></div>
+                        <ul class="price-features">
+                            <li><i class="fa-solid fa-check check-icon"></i> Luxury SUV Transfer Service</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Private Catamaran/Dhow Charter</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Chef-Prepared Seafood BBQ & Drinks</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Exclusive Kae Sandbar Sunset Lounge</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn-outline" style="justify-content:center;">Book Private Charter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding" style="background: rgba(0,0,0,0.25);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Travel Practicalities</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p style="color:var(--text-muted);">Essential information for planning your Matemwe & Michamvi escape.</p>
+            </div>
+
+            <div class="accordion-container">
+                <!-- Item 1 -->
+                <div class="accordion-item">
+                    <input type="checkbox" id="acc1" class="accordion-checkbox">
+                    <label for="acc1" class="accordion-label">
+                        <span>How do I plan around the East Coast tides in Matemwe & Michamvi?</span>
+                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </label>
+                    <div class="accordion-body">
+                        The ocean retreats significantly twice daily along Zanzibar's East Coast. High tide is ideal for swimming in Matemwe's turquoise lagoon and launching boat trips to Mnemba Atoll. Low tide is ideal for guided reef walks and exploring Michamvi Kae's shallow sandbars.
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="accordion-item">
+                    <input type="checkbox" id="acc2" class="accordion-checkbox">
+                    <label for="acc2" class="accordion-label">
+                        <span>What is the transit time from Stone Town or Abeid Amani Karume Airport?</span>
+                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </label>
+                    <div class="accordion-body">
+                        Driving to Matemwe takes approximately 55-60 minutes (45 km) from Stone Town or the airport. Transit to Michamvi takes roughly 65-75 minutes (62 km). Taxis and private transfers run smoothly along paved arterial roads.
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="accordion-item">
+                    <input type="checkbox" id="acc3" class="accordion-checkbox">
+                    <label for="acc3" class="accordion-label">
+                        <span>What reef-safe practices and local etiquette should I follow?</span>
+                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </label>
+                    <div class="accordion-body">
+                        Always wear mineral reef-safe sunscreen to protect delicate coral reefs. Do not touch or step on living corals or starfish. When passing through local fishing villages in Matemwe or Michamvi, please dress modestly out of respect for Zanzibari Swahili culture.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+</html>

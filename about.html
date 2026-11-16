@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | East African Expedition Studio</title>
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* ==========================================================================
+       1. VARIABLES & RESET
+       ========================================================================== */
+    :root {
+      --color-gold-300: #F5E4B2;
+      --color-gold-400: #ff6b00;
+      --color-gold-500: #B89323;
+      --color-gold-600: #917112;
+      --gold-hover: #c3972a;
+
+      --color-forest-950: #0A0E0C;
+      --color-forest-900: #0F1210;
+      --color-forest-850: #151B17;
+      --color-forest-800: #1B2923;
+      --color-forest-700: #2A3C34;
+      --color-forest-600: #3A5247;
+
+      --card-bg: rgba(11, 15, 25, 0.85);
+      --color-parchment-100: #FAF8F3;
+      --color-parchment-200: #F8F5EE;
+      --text-gray: #a1a5b0;
+      --border-dark: rgba(255, 255, 255, 0.08);
+
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    *, ::before, ::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: var(--font-sans);
+      background-color: var(--color-forest-900);
+      color: #ffffff;
+    }
+
+    body {
+      background-color: var(--color-forest-900);
+      color: #ffffff;
+      font-family: var(--font-sans);
+      min-height: 100vh;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--color-forest-900); }
+    ::-webkit-scrollbar-thumb { background: var(--color-forest-700); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--color-gold-400); }
+
+    ::selection { background-color: var(--color-gold-400); color: var(--color-forest-900); }
+
+
+     .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 23px 3%;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #d1d5db;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      text-decoration: none;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ff6b00;
+    }
+
+    .btn-book {
+      background-color: #451f05;
+      color: #ffffff;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-book:hover {
+      background-color: #ff6b00;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35);
+    }
+
+
+    /* ==========================================================================
+       2. UTILITIES & GLASSMORPHISM
+       ========================================================================== */
+    .font-serif { font-family: var(--font-serif); }
+    .font-sans { font-family: var(--font-sans); }
+    .max-w-7xl { max-width: 80rem; margin-left: auto; margin-right: auto; }
+    .w-full { width: 100%; }
+    .relative { position: relative; }
+    .hidden { display: none; }
+    .text-gold { color: var(--color-gold-400); }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF5D6 0%, #D4AF37 50%, #917112 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass-dark {
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .glass-card {
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(212, 175, 55, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .section-padding-container {
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================================================
+       3. BUTTONS & BADGES
+       ========================================================================== */
+    .btn-gold {
+      background-color:  #451f05;
+      color: #ffffff;
+      font-weight: 700;
+      border-radius: 9999px;
+      padding: 1rem 2rem;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px -5px  #451f05;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-gold:hover {
+      background-color: #ff6b00;
+      box-shadow: 0 15px 35px rgba(255, 107, 0, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.375rem 1rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      background-color: rgba(212, 175, 55, 0.1);
+      color: var(--color-gold-300);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       4. HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+      background: linear-gradient(180deg, rgba(2, 14, 20, 0.3) 0%, var(--bg-deep) 100%),
+                        url('') center/cover no-repeat fixed;;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-text-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--color-parchment-100);
+    }
+
+    .hero-title-gradient {
+      font-style: italic;
+    }
+
+    .hero-description {
+      color: #d1d5db;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .hero-action-box {
+      display: flex;
+      gap: 1rem;
+      padding-top: 0.5rem;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .stat-number {
+      font-family: var(--font-serif);
+      color: var(--color-gold-400);
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #9ca3af;
+      margin-top: 0.25rem;
+    }
+
+    .hero-image-wrapper {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      position: relative;
+    }
+
+    .hero-image-wrapper img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ==========================================================================
+       5. STORY & ETHOS SECTION
+       ========================================================================== */
+    .story-section {
+      background-color: #dfe2e8;
+      padding: 6rem 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .story-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .story-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .story-line {
+      width: 2rem;
+      height: 1px;
+      background-color: var(--color-gold-400);
+    }
+
+    .story-tagline {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .story-heading {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: black;
+      line-height: 1.2;
+    }
+
+    .story-paragraph {
+      color: black;
+      font-weight: 300;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .story-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .icon-box {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      background: rgba(212, 175, 55, 0.1);
+      color: var(--color-gold-400);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .feature-box {
+      padding: 1.5rem;
+      border-radius: 1rem;
+    }
+
+    .feature-title {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-description {
+      color: #9ca3af;
+      font-size: 0.8rem;
+      font-weight: 300;
+    }
+
+    /* ==========================================================================
+       6. DETAILS & TABS SECTION
+       ========================================================================== */
+    .about-details-section {
+      background-color: var(--color-forest-900);
+      padding: 6rem 1.5rem;
+    }
+
+    .about-details-header {
+      text-align: center;
+      max-width: 45rem;
+      margin: 0 auto 3rem auto;
+    }
+
+    .about-details-title {
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      color: var(--color-parchment-100);
+    }
+
+    .tabs-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .tabs-header label {
+      cursor: pointer;
+      padding: 0.75rem 1.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #9ca3af;
+    }
+
+    .tab-content {
+      display: none;
+      border-radius: 1.5rem;
+      padding: 3rem;
+    }
+
+    .tab-title {
+      font-size: 1.8rem;
+      color: var(--color-gold-400);
+      margin-bottom: 1rem;
+    }
+
+    .tab-text {
+      color: #d1d5db;
+      font-weight: 300;
+      line-height: 1.8;
+      font-size: 1rem;
+      max-width: 50rem;
+    }
+
+    /* Tab Switcher Logic */
+    #tab-vision:checked ~ #content-vision,
+    #tab-team:checked ~ #content-team,
+    #tab-impact:checked ~ #content-impact {
+      display: block;
+    }
+
+    #tab-vision:checked ~ .tabs-header label[for="tab-vision"],
+    #tab-team:checked ~ .tabs-header label[for="tab-team"],
+    #tab-impact:checked ~ .tabs-header label[for="tab-impact"] {
+      background-color: var(--color-gold-400);
+      color: var(--color-forest-900);
+      font-weight: 600;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .team-card {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .team-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .team-name {
+      color: #ffffff;
+      font-size: 1.1rem;
+    }
+
+    .team-role {
+      color: var(--color-gold-400);
+      font-size: 0.8rem;
+      margin-top: 0.2rem;
+    }
+
+    /* ==========================================================================
+       7. PILLARS OF OUR CRAFT SECTION
+       ========================================================================== */
+    .pillars-section {
+      padding: 6rem 1.5rem;
+      background-color: var(--color-forest-850);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .pillars-section .header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .pillars-section .sub-tag {
+      color: var(--color-gold-400);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .pillars-section .main-title {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 400;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .pillars-section .subtitle {
+      color: var(--text-gray);
+      font-size: 1rem;
+      font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .pillar-card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 2.25rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212, 175, 55, 0.2);
+    }
+
+    .pillar-card .icon-box {
+      width: 48px;
+      height: 48px;
+      background-color: rgba(212, 175, 55, 0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gold-400);
+      margin-bottom: 2rem;
+      font-size: 1.25rem;
+    }
+
+    .pillar-card .card-meta {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-gold-400);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar-card .card-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+
+    .pillar-card .card-title span {
+      font-style: italic;
+    }
+
+    .pillar-card .card-description {
+      color: var(--text-gray);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ==========================================================================
+       8. HOSPITALITY & ENDORSEMENTS SECTION
+       ========================================================================== */
+    .hospitality-section {
+      padding: 6rem 1.5rem;
+      background-color: var(--color-forest-900);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .hospitality-grid {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 2.5rem;
+      align-items: stretch;
+    }
+
+    .feature-card {
+      background-color: var(--card-bg);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      border: 1px solid rgba(212, 168, 56, 0.25);
+      box-shadow: 0 0 35px rgba(212, 168, 56, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .subtitle-badge {
+      color: var(--color-gold-400);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .feature-card h2 {
+      font-family: var(--font-serif);
+      font-size: 2.25rem;
+      font-weight: 400;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+    }
+
+    .feature-card p.description {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .checklist li i {
+      color: var(--color-gold-400);
+      font-size: 1rem;
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+
+    .endorsement-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-header .line {
+      width: 30px;
+      height: 1.5px;
+      background-color: var(--color-gold-400);
+    }
+
+    .section-header span {
+      color: var(--color-gold-400);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+
+.endorsement-container {
+      width: 100%;
+      max-width: 650px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-header .line {
+      width: 30px;
+      height: 1.5px;
+      background-color: var(--color-gold-400);
+    }
+
+    .section-header span {
+      color: var(--color-gold-400);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* Target za siri za kubadilisha slides (Radio Inputs) */
+    .slide-toggle {
+      display: none;
+    }
+
+    /* ==========================================
+       HOVER EFFECT ON CARD
+       ========================================== */
+    .quote-card {
+      background-color: var(--card-bg);
+      border-radius: 24px;
+      padding: 3.5rem 3rem 2.5rem 3rem;
+      border: 1px solid var(--border-dark);
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Card Hover Effect */
+    .quote-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212, 175, 55, 0.35);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7),
+                  0 0 30px 0 rgba(212, 175, 55, 0.1);
+    }
+
+    .quote-icon {
+      color: var(--color-gold-400);
+      font-size: 2.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Slides Content */
+    .slides-wrapper {
+      position: relative;
+      min-height: 190px;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    }
+
+    .quote-text {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: #ffffff;
+      font-weight: 400;
+      margin: 0 0 2rem 0;
+    }
+
+    .quote-footer {
+      border-top: 1px solid var(--border-dark);
+      padding-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .author-info h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 0.25rem 0;
+    }
+
+    .author-info p {
+      font-size: 0.85rem;
+      color: var(--color-gold-400);
+      margin: 0;
+    }
+
+    /* Navigation Controls (CSS Only) */
+    .nav-controls {
+      display: none;
+      gap: 0.75rem;
+    }
+
+    .nav-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.03);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+
+    /* Button Hover Effect */
+    .nav-btn:hover {
+      border-color: var(--color-gold-400);
+      color: var(--color-gold-400);
+      background: rgba(212, 175, 55, 0.1);
+      transform: scale(1.08);
+    }
+
+    /* ==========================================
+       PURE CSS LOGIC (SHOW ACTIVE SLIDE & BUTTONS)
+       ========================================== */
+    
+    /* Onyesha Slide 1 */
+    #slide1:checked ~ .quote-card .slide-1 {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      position: relative;
+    }
+    #slide1:checked ~ .quote-card .controls-1 {
+      display: flex;
+    }
+
+    /* Onyesha Slide 2 */
+    #slide2:checked ~ .quote-card .slide-2 {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      position: relative;
+    }
+    #slide2:checked ~ .quote-card .controls-2 {
+      display: flex;
+    }
+
+    /* Onyesha Slide 3 */
+    #slide3:checked ~ .quote-card .slide-3 {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      position: relative;
+    }
+    #slide3:checked ~ .quote-card .controls-3 {
+      display: flex;
+    }
+
+    @media (max-width: 640px) {
+      .quote-card {
+        padding: 2rem 1.5rem 1.75rem 1.5rem;
+      }
+      .quote-text {
+        font-size: 1.35rem;
+      }
+    }
+
+  /* --- SITE FOOTER --- */
+    .site-footer {
+      background: #09100b;
+      color: var(--white);
+      padding: 80px 6% 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.3fr 1fr;
+      gap: 50px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .footer-col h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+      color: var(--white);
+      position: relative;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 35px;
+      height: 2px;
+      background-color: #e05d00;
+    }
+
+    .footer-col p {
+      color: #8c968e;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #8c968e;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-links a:hover {
+      color: #e05d00;
+      transform: translateX(5px);
+    }
+
+    .contact-list {
+      list-style: none;
+    }
+
+    .contact-list li {
+      color: #8c968e;
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .contact-icon-box {
+      width: 36px;
+      height: 36px;
+      background-color: rgba(212, 163, 89, 0.1);
+      border: 1px solid rgba(212, 163, 89, 0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e05d00;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+      background-color: #e05d00;
+      border-color: var(--primary-gold);
+      color: #09100b;
+      transform: translateY(-4px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #5d665f;
+      font-size: 0.8rem;
+    }
+
+
+   /* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 50;
+    background-color:  #25D366;
+    color: #FFF;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.875rem;
+    text-decoration: none;
+    box-shadow: 0 10px 25px  rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: rgba(37, 211, 102, 0.6);
+}
+.whatsapp-tooltip {
+    position: absolute;
+    right: 4.25rem;
+    background: var(--bg-dark);
+    color: #FFF;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: opacity 0.2s ease;
+}
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+}
+
+
+    /* ==========================================================================
+       9. RESPONSIVE MEDIA QUERIES
+       ========================================================================== */
+    @media (min-width: 1024px) {
+      .hero-grid, .story-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hospitality-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+      .pillars-section .main-title {
+        font-size: 2.25rem;
+      }
+      .quote-text {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+   <header class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Company Logo">
+      <span class="logo-text">REFINED LUXURY &amp; TAILOR</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="Destinations.html">Destinations</a>
+      <a href="safaris.html">Safari</a>
+      <a href="packages.html">Our Package</a>
+      <a href="about.html" class="active">About Travel</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <button class="btn-book">Book Now</button>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="max-w-7xl w-full section-padding-container">
+      <div class="hero-grid">
+        
+        <!-- Main Intro -->
+        <div class="hero-text-content">
+          <div>
+            <span class="badge-pill">
+              <i class="fa-solid fa-leaf"></i>
+              Our Story • Arusha &amp; Serengeti
+            </span>
+          </div>
+
+          <h1 class="font-serif hero-title">
+            Architects of <br />
+            <span class="gold-gradient-text hero-title-gradient">Tailor-Made Expeditions</span>
+          </h1>
+
+          <p class="hero-description">
+            We are a boutique travel studio dedicated to designing bespoke, private safaris across Tanzania and East Africa. Combining raw wilderness, private charter logistics, and world-class hospitality.
+          </p>
+
+          <div class="hero-action-box">
+            <a href="#story" class="btn-gold">
+              <span>Read Our Heritage</span>
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <div class="stat-number">12+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div>
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Bespoke Journeys</div>
+            </div>
+            <div>
+              <div class="stat-number">50k+</div>
+              <div class="stat-label">Protected Acres</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="relative">
+          <div class="hero-image-wrapper">
+            <img src="images/vel.jpg" alt="Safari Experience" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Story & Ethos Section -->
+  <section id="story" class="story-section">
+    <div class="max-w-7xl">
+      <div class="story-grid">
+        
+        <div class="hero-image-wrapper">
+          <img src="images/trave.jpg" alt="Bush Luxury" />
+        </div>
+
+        <div class="story-content">
+          <div class="story-badge text-gold">
+            <span class="story-line"></span>
+            <span class="story-tagline">Our Studio Ethos</span>
+          </div>
+
+          <h2 class="font-serif story-heading">
+            Crafting Memories, Not Mass Itineraries
+          </h2>
+
+          <p class="story-paragraph">
+            Born in the safari capital of Arusha, Tanzania, our studio was founded to elevate how discerning travelers experience East Africa. We reject standardized group tours in favor of hyper-personalized itineraries built around individual tastes and conservation-led practices.
+          </p>
+
+          <div class="story-feature-grid">
+            <div class="glass-card feature-box">
+              <div class="icon-box"><i class="fa-solid fa-binoculars"></i></div>
+              <h4 class="font-serif feature-title">Master Trackers</h4>
+              <p class="feature-description">Led by native guides with decades of deep-bush tracking experience.</p>
+            </div>
+
+            <div class="glass-card feature-box">
+              <div class="icon-box"><i class="fa-solid fa-plane-departure"></i></div>
+              <h4 class="font-serif feature-title">Bush Aviation</h4>
+              <p class="feature-description">Bypass long road transit via direct private air charters into remote strips.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Dive: Vision, Team & Impact -->
+  <section class="about-details-section">
+    <div class="max-w-7xl">
+      
+      <div class="about-details-header">
+        <h2 class="font-serif about-details-title">Discover Our Foundation</h2>
+      </div>
+
+      <!-- Radio Controllers -->
+      <input type="radio" name="about-tab" id="tab-vision" class="hidden" checked />
+      <input type="radio" name="about-tab" id="tab-team" class="hidden" />
+      <input type="radio" name="about-tab" id="tab-impact" class="hidden" />
+
+      <!-- Tabs Navigation -->
+      <div class="tabs-header">
+        <label for="tab-vision" class="glass-card">Vision &amp; Values</label>
+        <label for="tab-team" class="glass-card">Leadership</label>
+        <label for="tab-impact" class="glass-card">Conservation &amp; Community</label>
+      </div>
+
+      <!-- Tab 1: Vision -->
+      <div id="content-vision" class="tab-content glass-dark">
+        <h3 class="font-serif tab-title">Beyond Conventional Travel</h3>
+        <p class="tab-text">
+          Our core objective is to pioneer sustainable luxury tourism across East Africa. We ensure that every expedition directly supports wildlife preservation and empowers indigenous communities, including Maasai and Hadzabe heritage initiatives.
+        </p>
+      </div>
+
+      <!-- Tab 2: Team -->
+      <div id="content-team" class="tab-content glass-dark">
+        <div class="team-grid">
+          <div class="team-card glass-card">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=500" alt="Founder" />
+            <h4 class="font-serif team-name">Gideon Masanja</h4>
+            <p class="team-role">Managing Director &amp; Founder</p>
+          </div>
+          <div class="team-card glass-card">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=500" alt="Expedition Director" />
+            <h4 class="font-serif team-name">Amani Mjema</h4>
+            <p class="team-role">Head of Expedition Planning</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Impact -->
+      <div id="content-impact" class="tab-content glass-dark">
+        <h3 class="font-serif tab-title">Preserving Wildlife For Generations</h3>
+        <p class="tab-text">
+          A portion of every booked journey directly funds anti-poaching patrols across the Serengeti-Mara ecosystem and supports educational scholarships for youths residing in communities bordering protected reserves.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pillars of Our Craft Section -->
+  <section class="pillars-section">
+    <div class="container">
+      <!-- Section Header -->
+      <header class="header">
+        <div class="sub-tag">
+          <i class="fa-solid fa-gem"></i> Uncompromising Standards
+        </div>
+        <h2 class="main-title">The Pillars of Our Craft</h2>
+        <p class="subtitle">
+          How we deliver a flawless travel experience from initial consultation to your journey home.
+        </p>
+      </header>
+
+      <!-- 4-Column Feature Grid -->
+      <div class="pillars-grid">
+        <!-- Card 1 -->
+        <article class="pillar-card">
+          <div class="icon-box">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <div class="card-meta">01 / Creation</div>
+          <h3 class="card-title">100% Custom Expeditions</h3>
+          <p class="card-description">
+            No cookie-cutter templates. Every schedule, meal preference, and activity is created around your exact desires.
+          </p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="pillar-card">
+          <div class="icon-box">
+            <i class="fa-solid fa-plane"></i>
+          </div>
+          <div class="card-meta">02 / Logistics</div>
+          <h3 class="card-title">Private Aviation <span>&amp;</span> Charters</h3>
+          <p class="card-description">
+            Maximize game-viewing time with private direct aircraft charters between lodges, eliminating long road transfers.
+          </p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="pillar-card">
+          <div class="icon-box">
+            <i class="fa-solid fa-user-check"></i>
+          </div>
+          <div class="card-meta">03 / Hosting</div>
+          <h3 class="card-title">Private Guides <span>&amp;</span> Chefs</h3>
+          <p class="card-description">
+            Learn from master wildlife trackers and savor gourmet culinary creations tailored to your dietary wishes.
+          </p>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="pillar-card">
+          <div class="icon-box">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <div class="card-meta">04 / Support</div>
+          <h3 class="card-title">24/7 White-Glove Desk</h3>
+          <p class="card-description">
+            Your personal travel concierge remains on standby throughout your journey to ensure total peace of mind.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hospitality & Endorsements Section -->
+  <section class="hospitality-section">
+    <div class="container">
+      <div class="hospitality-grid">
+        
+        <!-- Left Column: Personalized Hospitality -->
+        <div class="feature-card">
+          <div>
+            <span class="subtitle-badge">Personalized Hospitality</span>
+            <h2>Dedicated Travel Architects</h2>
+            <p class="description">
+              Unlike automated booking engines, you are assigned a dedicated African safari specialist who manages every detail—from visa advice to champagne preferences in your vehicle.
+            </p>
+
+            <ul class="checklist">
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <span>VIP Airport fast-track lounge handling</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Private 4x4 stretch vehicles with Wi-Fi &amp; refrigeration</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Bespoke surprise celebrations &amp; bush dining</span>
+              </li>
+            </ul>
+          </div>
+
+          <button class="btn-gold">Speak with an Architect</button>
+        </div>
+
+
+        <div class="endorsement-container">  
+    <!-- Radio inputs za kudhibiti slides kwa kutumia CSS pekee -->
+    <input type="radio" name="testimonial" id="slide1" class="slide-toggle" checked>
+    <input type="radio" name="testimonial" id="slide2" class="slide-toggle">
+    <input type="radio" name="testimonial" id="slide3" class="slide-toggle">
+
+    <div class="section-header">
+      <div class="line"></div>
+      <span>Guest Endorsements</span>
+    </div>
+
+    <!-- Interactive Card -->
+    <div class="quote-card">
+      <div class="quote-icon">
+        <i class="fa-solid fa-quote-left"></i>
+      </div>
+
+      <div class="slides-wrapper">
+        
+        <!-- Slide 1 -->
+        <div class="slide slide-1">
+          <blockquote class="quote-text">
+            "The seamless logistics were mind-blowing. Flying into Grumeti directly, followed by private heli-tours over Kilimanjaro, made this the most effortlessly luxurious trip our family has ever taken."
+          </blockquote>
+          <div class="quote-footer">
+            <div class="author-info">
+              <h4>Lord &amp; Lady Harrington</h4>
+              <p>London, United Kingdom</p>
+            </div>
+            <!-- Dynamic Navigation for Slide 1 -->
+            <div class="nav-controls controls-1">
+              <label for="slide3" class="nav-btn" title="Previous"><i class="fa-solid fa-arrow-left"></i></label>
+              <label for="slide2" class="nav-btn" title="Next"><i class="fa-solid fa-arrow-right"></i></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide slide-2">
+          <blockquote class="quote-text">
+            "An unbelievable experience from start to finish. Watching the Great Migration from our private camp was a lifelong dream brought to reality with absolute precision."
+          </blockquote>
+          <div class="quote-footer">
+            <div class="author-info">
+              <h4>Elena Rostova</h4>
+              <p>Zurich, Switzerland</p>
+            </div>
+            <!-- Dynamic Navigation for Slide 2 -->
+            <div class="nav-controls controls-2">
+              <label for="slide1" class="nav-btn" title="Previous"><i class="fa-solid fa-arrow-left"></i></label>
+              <label for="slide3" class="nav-btn" title="Next"><i class="fa-solid fa-arrow-right"></i></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide slide-3">
+          <blockquote class="quote-text">
+            "Every detail was handled with unmatched hospitality. The bush dining and private guide tracking skills exceeded all our expectations."
+          </blockquote>
+          <div class="quote-footer">
+            <div class="author-info">
+              <h4>Marcus &amp; Sophia Vance</h4>
+              <p>New York, USA</p>
+            </div>
+            <!-- Dynamic Navigation for Slide 3 -->
+            <div class="nav-controls controls-3">
+              <label for="slide2" class="nav-btn" title="Previous"><i class="fa-solid fa-arrow-left"></i></label>
+              <label for="slide1" class="nav-btn" title="Next"><i class="fa-solid fa-arrow-right"></i></label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  </section>
+
+
+
+ <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/255700000000?text=Hello!%20I%20am%20interested%20in%20planning%20a%20safari%20tour." target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with an Expert</span>
+    </a>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Refined Luxury & Tailor</h3>
+        <p>
+          Experience the magic of Tanzania, from the majestic Serengeti to Zanzibar's white beaches, on an unforgettable safari journey tailored to your exact preferences.
+        </p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/emmanuelyohana" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/emmanuel147322" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/255769128208" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.youtube.com/emmanuely" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Destinations.html">Destinations</a></li>
+          <li><a href="#">Safari Packages</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <ul class="contact-list">
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+            <span>Arusha, Tanzania</span>
+          </li>
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+            <span>+255 769 128 208</span>
+          </li>
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+            <span>+255 663 613 428</span>
+          </li>
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+            <span>info@refinedluxurytailor.com</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Newsletter</h3>
+        <p style="margin-bottom: 15px;">Subscribe for exclusive luxury safari deals and travel tips.</p>
+        <div style="display: flex; gap: 6px;">
+          <input type="email" placeholder="Your email..." style="padding: 10px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: white; width: 100%; font-size: 0.85rem;">
+          <button style="background: #e05d00; border: none; padding: 10px 16px; border-radius: 6px; color: #09100b; font-weight: bold; cursor: pointer;"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Refined Luxury &amp; Tailor Expedition. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refined Luxury & Tailor</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-orange: #ff6b00;
+      --primary-orange-hover: #e05d00;
+      --dark-accent: #451f05;
+      --bg-dark: #0b0f19;
+      --card-bg: #12151c;
+      --card-border: #1e222d;
+      --glass-bg: rgba(18, 21, 28, 0.6);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --primary-gold: #e2b157;
+      --text-main: #ffffff;
+      --text-muted: #cccccc;
+      --text-sub: #8a8d93;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+    /* Modern Scrolling Navigation Bar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 8px 5%;
+      background: rgba(11, 15, 25, 0.88);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: var(--transition);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-self: start;
+      cursor: default;
+    }
+
+    .logo img {
+      height: 85px;
+      width: auto;
+      max-width: 300px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a:not(.btn-book) {
+      color: #d1d5db;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .nav-links a:not(.btn-book)::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--primary-orange);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:not(.btn-book):hover::after,
+    .nav-links a:not(.btn-book).active::after {
+      width: 100%;
+    }
+
+    .nav-links a:not(.btn-book):hover,
+    .nav-links a:not(.btn-book).active {
+      color: var(--primary-orange);
+    }
+
+    .mobile-book-item {
+      display: none;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      justify-self: end;
+      gap: 15px;
+    }
+
+    .btn-book {
+      background-color: var(--primary-orange);
+      color: #ffffff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .btn-book:hover {
+      background-color: var(--primary-orange-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 1.6rem;
+      cursor: pointer;
+      z-index: 1002;
+      padding: 5px;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1920') no-repeat center center/cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(11, 15, 25, 0.9), rgba(11, 15, 25, 0.3));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 950px;
+    }
+
+    .hero-content h1 {
+      font-size: 4.2rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .hero-content .highlight {
+      color: var(--text-main);
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: #bbbbbb;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn-primary {
+      background-color: var(--dark-accent);
+      color: var(--text-main);
+      border: none;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-weight: bold;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-orange);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid #555555;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-weight: bold;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-main);
+    }
+
+    /* About Section */
+    .more {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      padding: 90px 8%;
+      background-color: #0e1320;
+      flex-wrap: wrap;
+    }
+
+    .video-container {
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 650px; 
+      margin: 20px auto; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      height: auto;
+    }
+
+    .video-container video {
+      width: 100%; 
+      height: auto;
+      display: block;
+    }
+
+    .text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .text h3 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--primary-orange);
+      line-height: 1.2;
+    }
+
+    .text p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-bottom: 35px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .feature-icon {
+      color: var(--primary-orange);
+      font-size: 1.2rem;
+    }
+
+    .feature-item h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .feature-item p {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+
+    .btn-orange {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--primary-orange);
+      color: var(--text-main);
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-orange:hover {
+      background-color: var(--primary-orange-hover);
+    }
+
+    /* Destinations Section */
+    .destinations-section {
+      padding: 90px 8%;
+      text-align: center;
+      background: var(--bg-dark);
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .section-header .highlight {
+      color: var(--primary-orange);
+    }
+
+    .section-header p {
+      color: #aaa;
+      font-size: 0.95rem;
+      max-width: 600px;
+      margin: 0 auto 50px auto;
+    }
+
+    .destinations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .destination-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      text-align: left;
+      transition: var(--transition);
+    }
+
+    .destination-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--primary-orange);
+    }
+
+    .destination-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .destination-body {
+      padding: 20px;
+    }
+
+    .destination-body h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .destination-body p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    /* Services / Packages Section */
+    .services-section {
+      padding: 90px 8%;
+      text-align: center;
+      background: radial-gradient(circle at top right, rgba(255, 107, 0, 0.15), transparent 40%);
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 280px;
+      gap: 24px;
+    }
+
+    .bento-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(12px);
+      transition: var(--transition);
+      text-align: left;
+    }
+
+    .bento-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(226, 177, 87, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .bento-card.col-span-2 {
+      grid-column: span 2;
+    }
+
+    .bento-card .bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.25;
+      z-index: 0;
+      transition: var(--transition);
+    }
+
+    .bento-card:hover .bg-img {
+      transform: scale(1.05);
+      opacity: 0.35;
+    }
+
+    .bento-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .icon-pill {
+      width: 48px;
+      height: 48px;
+      background: rgba(226, 177, 87, 0.15);
+      color: var(--primary-gold);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+      border: 1px solid rgba(226, 177, 87, 0.3);
+    }
+
+    .bento-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .bento-card p {
+      color: var(--text-sub);
+      font-size: 0.92rem;
+    }
+
+    /* Testimonials Section */
+    .testimonials-section {
+      padding: 90px 8%;
+      text-align: center;
+    }
+
+    .heading h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .heading h2 span {
+      color: var(--primary-orange);
+    }
+
+    .heading p {
+      color: var(--text-sub);
+      font-size: 0.95rem;
+      margin-bottom: 50px;
+    }
+
+    .testimonials-container {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 25px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 20px;
+    }
+
+    .testimonial-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 20px 18px;
+      width: 260px;
+      flex: 0 0 260px;
+      text-align: left;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 250px;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .stars i {
+      color: var(--primary-orange);
+      font-size: 0.8rem;
+    }
+
+    .quote-icon {
+      color: #333842;
+      font-size: 1.2rem;
+    }
+
+    .review-text {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .user-details h4 {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .user-details span {
+      font-size: 0.75rem;
+      color: #777d86;
+    }
+
+    /* Stats Section */
+    .stats-section {
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at center, #231917 0%, #0b0f19 70%);
+      text-align: center;
+    }
+
+    .subtitle {
+      color: #aaa;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    .stats {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary-orange-hover);
+      font-size: 1.2rem;
+    }
+
+    /* Site Footer */
+    .site-footer {
+      background: #09100b;
+      color: #fff;
+      padding: 80px 6% 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.3fr 1fr;
+      gap: 50px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .footer-col h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+      color: #fff;
+      position: relative;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 35px;
+      height: 2px;
+      background-color: #e05d00;
+    }
+
+    .footer-col p {
+      color: #8c968e;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #8c968e;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-links a:hover {
+      color: #e05d00;
+      transform: translateX(5px);
+    }
+
+    .contact-list {
+      list-style: none;
+    }
+
+    .contact-list li {
+      color: #8c968e;
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .contact-icon-box {
+      width: 36px;
+      height: 36px;
+      background-color: rgba(212, 163, 89, 0.1);
+      border: 1px solid rgba(212, 163, 89, 0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e05d00;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+      background-color: #e05d00;
+      border-color: var(--primary-gold);
+      color: #09100b;
+      transform: translateY(-4px);
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 6px;
+      position: relative;
+    }
+
+    .newsletter-input {
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      color: white;
+      width: 100%;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .newsletter-input:focus {
+      border-color: var(--primary-orange);
+    }
+
+    .newsletter-btn {
+      background: #e05d00;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      color: #09100b;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .newsletter-btn:hover {
+      background: #ff6b00;
+    }
+
+    .newsletter-msg {
+      font-size: 0.8rem;
+      margin-top: 8px;
+      display: block;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #5d665f;
+      font-size: 0.8rem;
+    }
+
+    /* --- RESPONSIVE MEDIA QUERIES --- */
+    @media (max-width: 992px) {
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .logo img {
+        height: 70px;
+      }
+
+      .desktop-book-btn {
+        display: none;
+      }
+
+      .mobile-book-item {
+        display: block;
+        width: 100%;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: rgba(11, 15, 25, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 95px 30px 30px 30px;
+        gap: 22px;
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: -15px 0 40px rgba(0, 0, 0, 0.7);
+        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        z-index: 1001;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a:not(.btn-book) {
+        font-size: 1.15rem;
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+      }
+
+      .nav-links .btn-book {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 1rem;
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .destinations-grid,
+      .bento-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+      }
+
+      .bento-card.col-span-2 {
+        grid-column: span 1;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo img {
+        height: 62px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.4rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      .site-footer {
+        padding: 60px 6% 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Modern Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/Refined Luxury Tanzania Safari Logo.png" alt="Refined Luxury Logo">
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#safaris">Safari</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li class="mobile-book-item"><a href="#contact" class="btn-book">Book Now</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="#contact" class="btn-book desktop-book-btn">Book Now</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars" id="menuIcon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- 1. Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Refined Luxury & Tailor-Made <br><span class="highlight">In Tanzania Safaris</span></h1>
+      <p>Premium safari experiences crafted from Arusha to Serengeti & Zanzibar.</p>
+      <div class="hero-buttons">
+        <a href="#destinations" class="btn-primary">Start Journey</a>
+        <a href="#contact" class="btn-secondary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. About Section -->
+  <section class="more" id="about">
+    <div class="video-container">
+      <video controls poster="images/vd.jpg">
+        <source src="images/tanzania.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="text">
+      <h3>Experience Authentic Tanzania with Local Experts</h3>
+      <p>
+        Take a real, unscripted journey through Tanzania guided by people who actually live there and know the land best—inviting you to live and feel the journey rather than just passively watching it.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <i class="fa-solid fa-leaf feature-icon"></i>
+          <div>
+            <h3>Eco Tourism</h3>
+            <p>Sustainable travel</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <i class="fa-solid fa-people-roof feature-icon"></i>
+          <div>
+            <h3>Local Experience</h3>
+            <p>Authentic culture</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contact" class="btn-orange">
+        <i class="fa-regular fa-compass"></i> Plan Your Safari
+      </a>
+    </div>
+  </section>
+
+  <!-- 3. Destinations Section -->
+  <section class="destinations-section" id="destinations">
+    <div class="section-header">
+      <h2>Top Featured <span class="highlight">Destinations</span></h2>
+      <p>Discover Tanzania's breathtaking national parks and pristine tropical islands.</p>
+    </div>
+
+    <div class="destinations-grid">
+      <div class="destination-card">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=800" alt="Serengeti" class="destination-img">
+        <div class="destination-body">
+          <h3>Serengeti National Park</h3>
+          <p>Witness the world-famous Great Migration and majestic big cats in their natural habitat.</p>
+        </div>
+      </div>
+
+      <div class="destination-card">
+        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800" alt="Ngorongoro" class="destination-img">
+        <div class="destination-body">
+          <h3>Ngorongoro Crater</h3>
+          <p>Explore the stunning volcanic caldera teeming with an abundance of wildlife.</p>
+        </div>
+      </div>
+
+      <div class="destination-card">
+        <img src="https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?q=80&w=800" alt="Zanzibar" class="destination-img">
+        <div class="destination-body">
+          <h3>Zanzibar Beaches</h3>
+          <p>Relax on white-sand shores and explore the historic winding alleys of Stone Town.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Services / Packages Section -->
+  <section class="services-section" id="packages">
+    <div class="section-header">
+      <h2>Explore Our <span class="highlight">Services</span></h2>
+      <p>Exceptional travel services carefully designed to give you a peaceful and comfortable journey in Tanzania.</p>
+    </div>
+
+    <div class="bento-grid">
+      <div class="bento-card col-span-2">
+        <img src="images/tz.jpg" class="bg-img" alt="Serengeti">
+        <div class="icon-pill"><i class="fa-solid fa-paw"></i></div>
+        <div class="bento-content">
+          <h3>Serengeti & Ngorongoro Game Drives</h3>
+          <p>Witness the Great Migration up close with custom 4x4 Land Cruisers equipped with luxury amenities.</p>
+        </div>
+      </div>
+
+      <div class="bento-card">
+        <div class="icon-pill"><i class="fa-solid fa-plane"></i></div>
+        <div class="bento-content">
+          <h3>VIP Airport Transfers</h3>
+          <p>Seamless transport solutions from Kilimanjaro (JRO) & Arusha Airports direct to your lodge.</p>
+        </div>
+      </div>
+
+      <div class="bento-card">
+        <div class="icon-pill"><i class="fa-solid fa-leaf"></i></div>
+        <div class="bento-content">
+          <h3>Eco-Friendly Lodging</h3>
+          <p>Stay in sustainable luxury camps that preserve nature and support local communities.</p>
+        </div>
+      </div>
+
+      <div class="bento-card col-span-2">
+        <img src="images/taz.jpg" class="bg-img" alt="Authentic Culture">
+        <div class="icon-pill"><i class="fa-solid fa-compass"></i></div>
+        <div class="bento-content">
+          <h3>Authentic Cultural Immersions</h3>
+          <p>Connect with Tanzanian heritage through authentic interactions guided by lifelong local residents.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="heading">
+      <h2>What Our <span>Guests Say</span></h2>
+      <p>Real experiences from travelers who explored Tanzania with us.</p>
+    </div>
+
+    <div class="testimonials-container">
+      <div class="testimonial-card">
+        <div class="card-header">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <span class="quote-icon"><i class="fa-solid fa-quote-right"></i></span>
+        </div>
+        <p class="review-text">
+          A safari experience like no other. Our guides were exceptionally professional and made every moment feel magical.
+        </p>
+        <div class="user-info">
+          <img src="images/putin.jpeg" alt="Putin" class="avatar">
+          <div class="user-details">
+            <h4>Putin</h4>
+            <span>Spain</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="card-header">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <span class="quote-icon"><i class="fa-solid fa-quote-right"></i></span>
+        </div>
+        <p class="review-text">
+          Impeccably organized from start to finish. Transfers and safari activities were smooth, effortless, and well planned.
+        </p>
+        <div class="user-info">
+          <img src="images/IMG-20260903-WA0001.jpg" alt="Japhar" class="avatar">
+          <div class="user-details">
+            <h4>Japhar</h4>
+            <span>USA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="card-header">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <span class="quote-icon"><i class="fa-solid fa-quote-right"></i></span>
+        </div>
+        <p class="review-text">
+          An peerless safari experience. Our guides showed the highest level of skill and made every moment feel like a dream.
+        </p>
+        <div class="user-info">
+          <img src="images/IMG-20260903-WA0000.jpg" alt="Tatu" class="avatar">
+          <div class="user-details">
+            <h4>Tatu</h4>
+            <span>Kenya</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="card-header">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <span class="quote-icon"><i class="fa-solid fa-quote-right"></i></span>
+        </div>
+        <p class="review-text">
+          The coordination was solid from start to finish. Transport and all safari events went without a hitch and with neat organization.
+        </p>
+        <div class="user-info">
+          <img src="images/devid.jpg" alt="Devid" class="avatar">
+          <div class="user-details">
+            <h4>Devid</h4>
+            <span>China</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Stats Section -->
+  <section class="stats-section">
+    <div class="stats-content">
+      <p class="subtitle">Relied on by travelers across the world</p>
+      <div class="stats">
+        <div class="stat-item">
+          <i class="fa-solid fa-globe"></i>
+          <span>50+ Countries</span>
+        </div>
+        <div class="stat-item">
+          <i class="fa-solid fa-users"></i>
+          <span>1000+ Travelers</span>
+        </div>
+        <div class="stat-item">
+          <i class="fa-solid fa-ribbon"></i>
+          <span>Top Rated Tours</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FOOTER -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Refined Luxury & Tailor</h3>
+        <p>
+          Experience the magic of Tanzania, from the majestic Serengeti to Zanzibar's white beaches, on an unforgettable safari journey tailored to your exact preferences.
+        </p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/emmanuelyohana" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/emmanuel147322" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/255769128208" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.youtube.com/emmanuely" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#packages">Safari Packages</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <ul class="contact-list">
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+            <span>Arusha, Tanzania</span>
+          </li>
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+            <span>+255 769 128 208</span>
+          </li>
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+            <span>+255 663 613 428</span>
+          </li>
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+            <span>info@refinedluxurytailor.com</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Newsletter</h3>
+        <p style="margin-bottom: 15px;">Subscribe for exclusive luxury safari deals and travel tips.</p>
+        
+        <form id="newsletterForm" class="newsletter-form" action="https://formspree.io/f/xkjrovze" method="POST">
+          <input type="email" name="email" id="newsletterEmail" class="newsletter-input" placeholder="Your email..." required>
+          <button type="submit" id="newsletterBtn" class="newsletter-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <span id="newsletterMsg" class="newsletter-msg"></span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Refined Luxury & Tailor Expedition. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ================= TAWK.TO LIVE CHAT SCRIPT (IMEWEKWA MWISHO ILI KUWAKA HARAKA) ================= -->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/Refinedluxurytailor/1k7icugn9';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+  <!-- ======================================================================================== -->
+
+  <!-- JavaScript for Interactive Features -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const menuIcon = document.getElementById('menuIcon');
+    const navLinks = document.getElementById('navLinks');
+    const links = navLinks.querySelectorAll('a');
+
+    // Open / Close Mobile Menu
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      
+      if (navLinks.classList.contains('active')) {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
+      } else {
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      }
+    });
+
+    // Close menu automatically when any link is clicked on mobile
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      });
+    });
+
+    // Handle Newsletter Form Data Submission
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterMsg = document.getElementById('newsletterMsg');
+    const newsletterBtn = document.getElementById('newsletterBtn');
+
+    newsletterForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(newsletterForm);
+      newsletterBtn.disabled = true;
+      newsletterBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+      newsletterMsg.style.color = '#e2b157';
+      newsletterMsg.textContent = 'Sending...';
+
+      try {
+        const response = await fetch(newsletterForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'json'
+          }
+        });
+
+        if (response.ok) {
+          newsletterMsg.style.color = '#25D366';
+          newsletterMsg.textContent = 'Thank you! You have successfully subscribed.';
+          newsletterForm.reset();
+        } else {
+          newsletterMsg.style.color = '#ff6b00';
+          newsletterMsg.textContent = 'Something went wrong. Please try again.';
+        }
+      } catch (error) {
+        newsletterMsg.style.color = '#ff6b00';
+        newsletterMsg.textContent = 'Failed to send. Please check your network connection.';
+      } finally {
+        newsletterBtn.disabled = false;
+        newsletterBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i>';
+      }
+    });
+  </script>
+
+</body>
+</html>

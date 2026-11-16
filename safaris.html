@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refined Luxury & Tailor | Luxury Safari Expeditions</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* --- CSS VARIABLES & RESET --- */
+    :root {
+      --primary-gold: #d4a359;
+      --primary-gold-hover: #b88a42;
+      --accent-orange: #d97706;
+      --dark-green: #111e16;
+      --medium-green: #1a2c20;
+      --card-bg: #f8f7f4;
+      --light-bg: #faf9f5;
+      --white: #ffffff;
+      --text-dark: #1a1e1b;
+      --text-muted: #626c66;
+      --border-color: #e5e3dc;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+      --radius: 14px;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, .serif-font {
+      font-family: 'Cinzel', serif;
+    }
+
+    /* --- NAVIGATION BAR --- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 23px 3%;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #d1d5db;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      text-decoration: none;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ff6b00;
+    }
+
+    .btn-book {
+      background-color: #451f05;
+      color: #ffffff;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-book:hover {
+      background-color: #ff6b00;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35);
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      position: relative;
+      background: linear-gradient(180deg, rgba(10, 15, 29, 0.6) 0%, rgba(10, 15, 29, 0.85) 100%),
+                  url('https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      min-height: 85vh;
+      padding: 160px 6% 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: var(--white);
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero-subtitle {
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff6b00;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      font-weight: 700;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: #e2e8f0;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* Hero Features Bar */
+    .hero-features {
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      padding: 24px 35px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      margin-top: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .feature-box {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(212, 163, 89, 0.15);
+      border: 1px solid #ff6b00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: #ff6b00;
+      flex-shrink: 0;
+    }
+
+    .feature-text h4 {
+      font-size: 0.9rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .feature-text p {
+      font-size: 0.75rem;
+      color: #a0aec0;
+    }
+
+    /* --- SECTION GENERAL --- */
+    .section {
+      padding: 90px 6%;
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 50px;
+    }
+
+    .section-subtitle {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: #ff6b00;
+      text-transform: uppercase;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    /* --- SAFARI TYPES SECTION --- */
+    .grid-5 {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 22px;
+    }
+
+    .type-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .type-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .type-card-img {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .type-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .type-card:hover .type-card-img img {
+      transform: scale(1.08);
+    }
+
+    .type-badge-icon {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      width: 38px;
+      height: 38px;
+      background: rgba(17, 30, 22, 0.85);
+      color: #ff6b00;
+      border: 1px solid #ff6b00;
+      backdrop-filter: blur(4px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .type-card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .type-card-body h3 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .type-card-body p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .view-details {
+      margin-top: auto;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--dark-green);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .type-card:hover .view-details {
+      color: #ff6b00;
+      gap: 12px;
+    }
+
+    .btn-outlined-center {
+      display: flex;
+      justify-content: center;
+      margin-top: 45px;
+    }
+
+    .btn-outline {
+      border: 1.5px solid var(--dark-green);
+      background: transparent;
+      color: var(--dark-green);
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-outline:hover {
+      background: var(--dark-green);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+
+
+ /* CSS-Only Modal Overlay using :target */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      
+      /* Hidden by default */
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    /* Display Modal when URL hash matches target ID */
+    .modal-overlay:target {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-backdrop-close {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: default;
+    }
+
+    /* Modal Content Dialog */
+    .modal-content {
+      background: #fff;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      z-index: 1001;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transform: scale(0.95);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .modal-overlay:target .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-header img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .modal-body {
+      padding: 25px;
+    }
+
+    .modal-body h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #111;
+    }
+
+    .modal-body p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    /* Modal Action Buttons Group (Close on Left, Book Now on Right) */
+    .modal-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .book-now-btn {
+      display: inline-block;
+      background-color: #d97706;
+      color: white;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background-color 0.2s ease;
+    }
+
+    .book-now-btn:hover {
+      background-color: #b45309;
+    }
+
+    .modal-close-btn {
+      display: inline-block;
+      background-color: #f3f4f6;
+      color: #4b5563;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .modal-close-btn:hover {
+      background-color: #e5e7eb;
+      color: #111827;
+    }
+
+    .close-icon-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      text-decoration: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .close-icon-btn:hover {
+      background: rgba(0,0,0,0.8);
+    }
+
+
+    /* --- POPULAR EXPERIENCES SECTION --- */
+    .section-header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 35px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .exp-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .exp-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .exp-img-wrap {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .exp-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .exp-card:hover .exp-img-wrap img {
+      transform: scale(1.06);
+    }
+
+    .pill-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--accent-orange);
+      color: var(--white);
+      font-size: 0.7rem;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 10px rgba(217, 119, 6, 0.3);
+    }
+
+    .exp-card-body {
+      padding: 20px;
+    }
+
+    .exp-card-body h3 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .exp-location {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-color);
+      padding-top: 14px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .exp-price {
+      font-size: 0.85rem;
+    }
+
+    .exp-price span {
+      font-weight: 700;
+      color: #ff6b00;
+      font-size: 1.05rem;
+    }
+
+    /* --- WHY TRAVEL WITH US --- */
+    .why-us-wrap {
+      background: rgba(5, 7, 12, 0.968);
+      color: var(--white);
+      padding: 70px 6%;
+      border-radius: var(--radius);
+      margin: 40px 6%;
+      box-shadow: var(--shadow-md);
+    }
+
+    .why-us-wrap h2 {
+      font-size: 2rem;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .why-us-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .why-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .why-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid #ff6b00;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ff6b00;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .why-text h4 {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .why-text p {
+      font-size: 0.8rem;
+      color: #a0aec0;
+      line-height: 1.5;
+    }
+
+    /* --- CTA BANNER --- */
+    .cta-banner-wrapper {
+      padding: 0 6% 90px;
+    }
+
+    .cta-banner {
+      width: 100%;
+      background: linear-gradient(180deg, rgba(10, 15, 29, 0.6) 0%, rgba(10, 15, 29, 0.85) 100%),
+                  url('https://images.unsplash.com/photo-1534177616072-ef7dc120449d?q=80&w=1200&auto=format&fit=crop') right center / cover no-repeat;
+      border-radius: var(--radius);
+      padding: 45px 50px;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .cta-left {
+      flex: 1;
+      max-width: 360px;
+      padding-right: 40px;
+      border-right: 1px solid #ff6b00;
+    }
+
+    .cta-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .cta-subtitle {
+      font-size: 0.85rem;
+      color: #a0aec0;
+      margin-bottom: 25px;
+    }
+
+    .btn-plan {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--accent-orange), #ff6b00);
+      color: var(--white);
+      padding: 12px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+    }
+
+    .btn-plan:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(217, 119, 6, 0.5);
+    }
+
+    .cta-steps {
+      flex: 2;
+      display: flex;
+      justify-content: space-around;
+      padding-left: 30px;
+      gap: 20px;
+    }
+
+    .step-item {
+      text-align: center;
+      max-width: 180px;
+      position: relative;
+    }
+
+    .step-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 28px;
+      right: -35%;
+      width: 60%;
+      height: 1px;
+      border-top: 1px dashed #ff6b00;
+    }
+
+    .icon-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1px solid #ff6b00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      background: rgba(17, 30, 22, 0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    .icon-circle i {
+      font-size: 1.2rem;
+      color: #ff6b00;
+    }
+
+    .step-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .step-desc {
+      font-size: 0.75rem;
+      color: #a0aec0;
+      line-height: 1.4;
+    }
+
+   /* --- SITE FOOTER --- */
+    .site-footer {
+      background: #09100b;
+      color: var(--white);
+      padding: 80px 6% 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.3fr 1fr;
+      gap: 50px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .footer-col h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+      color: var(--white);
+      position: relative;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 35px;
+      height: 2px;
+      background-color: #e05d00;
+    }
+
+    .footer-col p {
+      color: #8c968e;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #8c968e;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-links a:hover {
+      color: #e05d00;
+      transform: translateX(5px);
+    }
+
+    .contact-list {
+      list-style: none;
+    }
+
+    .contact-list li {
+      color: #8c968e;
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .contact-icon-box {
+      width: 36px;
+      height: 36px;
+      background-color: rgba(212, 163, 89, 0.1);
+      border: 1px solid rgba(212, 163, 89, 0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e05d00;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+      background-color: #e05d00;
+      border-color: var(--primary-gold);
+      color: #09100b;
+      transform: translateY(-4px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #5d665f;
+      font-size: 0.8rem;
+    }
+
+  /* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 50;
+    background-color:  #25D366;
+    color: #FFF;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.875rem;
+    text-decoration: none;
+    box-shadow: 0 10px 25px  rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: rgba(37, 211, 102, 0.6);
+}
+.whatsapp-tooltip {
+    position: absolute;
+    right: 4.25rem;
+    background: var(--bg-dark);
+    color: #FFF;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: opacity 0.2s ease;
+}
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+}
+
+    /* --- RESPONSIVE MEDIA QUERIES --- */
+    @media (max-width: 1200px) {
+      .grid-5 { grid-template-columns: repeat(3, 1fr); }
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .why-us-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-container { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .hero-title { font-size: 2.5rem; }
+      .hero-features { grid-template-columns: repeat(2, 1fr); }
+      .cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 35px 30px;
+        background: var(--dark-green);
+      }
+      .cta-left {
+        max-width: 100%;
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+        width: 100%;
+      }
+      .cta-steps {
+        width: 100%;
+        padding-left: 0;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .step-item {
+        max-width: 100%;
+        display: flex;
+        text-align: left;
+        align-items: center;
+        gap: 15px;
+      }
+      .step-item:not(:last-child)::after { display: none; }
+      .icon-circle { margin: 0; flex-shrink: 0; }
+      .nav-links { display: none; } /* Add JS mobile menu if needed */
+    }
+
+    @media (max-width: 600px) {
+      .grid-5, .grid-4, .hero-features, .why-us-grid, .footer-container {
+        grid-template-columns: 1fr;
+      }
+      .section { padding: 60px 5%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Logo" onerror="this.style.display='none'">
+      <span class="logo-text">REFINED LUXURY &amp; TAILOR</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Destinations.html">Destinations</a></li>
+      <li><a href="safaris.html" class="active">Safari</a></li>
+      <li><a href="packages.html">Our Packages</a></li>
+      <li><a href="about.html">About Travel</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <button class="btn-book">Book Now</button>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-subtitle">Authentic Expeditions</span>
+      <h1 class="hero-title">Journey Beyond the Ordinary</h1>
+      <p class="hero-desc">Unforgettable safari adventures across Africa's most iconic landscapes and pristine wilderness.</p>
+    </div>
+
+    <div class="hero-features">
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-compass"></i></div>
+        <div class="feature-text">
+          <h4>Expert Local Guides</h4>
+          <p>Knowledgeable & Passionate</p>
+        </div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-sliders"></i></div>
+        <div class="feature-text">
+          <h4>Tailor-Made Safaris</h4>
+          <p>Customized to your dreams</p>
+        </div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="feature-text">
+          <h4>Safe & Secure</h4>
+          <p>Top priority safety standards</p>
+        </div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+        <div class="feature-text">
+          <h4>Sustainable Travel</h4>
+          <p>Supporting conservation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFARI TYPES SECTION -->
+  <section class="section">
+    <div class="section-title-wrap">
+      <span class="section-subtitle">Choose Your Adventure</span>
+      <h2 class="section-title">Safari Experiences</h2>
+    </div>
+
+    <div class="grid-5">
+      <!-- Card 1 -->
+      <div class="type-card">
+        <div class="type-card-img">
+          <img src="images/Game .jpg" alt="Game Drives">
+          <div class="type-badge-icon"><i class="fa-solid fa-truck-monster"></i></div>
+        </div>
+        <div class="type-card-body">
+          <h3>Game Drives</h3>
+          <p>Explore vast landscapes in open 4x4 land cruisers with expert trackers to spot the Big Five.</p>
+          <a href="#modal-game-drives" class="view-details">View Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="type-card">
+        <div class="type-card-img">
+          <img src="images/walking.jpg" alt="Walking Safaris">
+          <div class="type-badge-icon"><i class="fa-solid fa-person-walking"></i></div>
+        </div>
+        <div class="type-card-body">
+          <h3>Walking Safaris</h3>
+          <p>Feel the pulse of Africa on foot accompanied by armed rangers and knowledgeable naturalists.</p>
+          <a href="#modal-walking-safaris" class="view-details">View Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="type-card">
+        <div class="type-card-img">
+          <img src="images/brid.jpg" alt="Bird Watching">
+          <div class="type-badge-icon"><i class="fa-solid fa-dove"></i></div>
+        </div>
+        <div class="type-card-body">
+          <h3>Bird Watching</h3>
+          <p>Discover over 1,100 rare species across diverse wetlands, woodlands, and savannahs.</p>
+          <a href="#modal-bird-watching" class="view-details">View Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="type-card">
+        <div class="type-card-img">
+          <img src="images/photo.jpg" alt="Photographic Safaris">
+          <div class="type-badge-icon"><i class="fa-solid fa-camera"></i></div>
+        </div>
+        <div class="type-card-body">
+          <h3>Photographic Safaris</h3>
+          <p>Capture breathtaking moments with specialized vehicles and professional photo guides.</p>
+          <a href="#modal-photographic-safaris" class="view-details">View Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="type-card">
+        <div class="type-card-img">
+          <img src="images/Balloon .jpg" alt="Balloon Safaris">
+          <div class="type-badge-icon"><i class="fa-solid fa-wind"></i></div>
+        </div>
+        <div class="type-card-body">
+          <h3>Balloon Safaris</h3>
+          <p>Soar silently above the Serengeti at sunrise followed by a luxury bush breakfast.</p>
+          <a href="#modal-balloon-safaris" class="view-details">View Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-outlined-center">
+      <button class="btn-outline"><i class="fa-solid fa-sliders"></i> Customize Your Itinerary</button>
+    </div>
+  </section>
+
+
+ <!-- Modal 1: Game Drives -->
+  <div class="modal-overlay" id="modal-game-drives">
+    <a href="#" class="modal-backdrop-close"></a>
+    <div class="modal-content">
+      <a href="#" class="close-icon-btn">&times;</a>
+      <div class="modal-header">
+        <img src="images/Game .jpg" alt="Game Drives">
+      </div>
+      <div class="modal-body">
+        <h2>Game Drives</h2>
+        <p>Game Drives offer an extraordinary opportunity to travel deep into wildlife reserves in customized open-top 4x4 vehicles. You will get up-close views of the Big Five (Lions, Elephants, Leopards, Rhinos, and Buffalos) guided by highly experienced local trackers and naturalists.</p>
+        <div class="modal-actions">
+          <a href="#" class="modal-close-btn">Close</a>
+          <a href="#book" class="book-now-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Walking Safaris -->
+  <div class="modal-overlay" id="modal-walking-safaris">
+    <a href="#" class="modal-backdrop-close"></a>
+    <div class="modal-content">
+      <a href="#" class="close-icon-btn">&times;</a>
+      <div class="modal-header">
+        <img src="images/walking.jpg" alt="Walking Safaris">
+      </div>
+      <div class="modal-body">
+        <h2>Walking Safaris</h2>
+        <p>Experience the raw essence of the African wilderness on foot. Walking safaris allow you to observe animal tracks, indigenous medicinal plants, and insect life close up. Accompanied by armed wildlife rangers and experienced guides, safety and immersion are guaranteed.</p>
+        <div class="modal-actions">
+          <a href="#" class="modal-close-btn">Close</a>
+          <a href="#book" class="book-now-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Bird Watching -->
+  <div class="modal-overlay" id="modal-bird-watching">
+    <a href="#" class="modal-backdrop-close"></a>
+    <div class="modal-content">
+      <a href="#" class="close-icon-btn">&times;</a>
+      <div class="modal-header">
+        <img src="images/brid.jpg" alt="Bird Watching">
+      </div>
+      <div class="modal-body">
+        <h2>Bird Watching</h2>
+        <p>Explore over 1,100 species of rare and exotic birds residing across diverse wetlands, riverine forests, and open savannahs. Perfect for photography and birding enthusiasts wanting to witness migratory species alongside native African birds.</p>
+        <div class="modal-actions">
+          <a href="#" class="modal-close-btn">Close</a>
+          <a href="#book" class="book-now-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Photographic Safaris -->
+  <div class="modal-overlay" id="modal-photographic-safaris">
+    <a href="#" class="modal-backdrop-close"></a>
+    <div class="modal-content">
+      <a href="#" class="close-icon-btn">&times;</a>
+      <div class="modal-header">
+        <img src="images/photo.jpg" alt="Photographic Safaris">
+      </div>
+      <div class="modal-body">
+        <h2>Photographic Safaris</h2>
+        <p>Tailored specifically for photographers, our specialized vehicles feature camera mounts, side openings, and flexible seating. Professional photo guides assist with ideal lighting angles, positioning, and animal behavior predictions to ensure stunning shots.</p>
+        <div class="modal-actions">
+          <a href="#" class="modal-close-btn">Close</a>
+          <a href="#book" class="book-now-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Balloon Safaris -->
+  <div class="modal-overlay" id="modal-balloon-safaris">
+    <a href="#" class="modal-backdrop-close"></a>
+    <div class="modal-content">
+      <a href="#" class="close-icon-btn">&times;</a>
+      <div class="modal-header">
+        <img src="images/Balloon .jpg" alt="Balloon Safaris">
+      </div>
+      <div class="modal-body">
+        <h2>Balloon Safaris</h2>
+        <p>Glide silently over the vast Serengeti plains at dawn in a hot air balloon. Witness herds roaming below during sunrise, followed by a champagne toast and a luxury bush breakfast prepared right in the wilderness upon landing.</p>
+        <div class="modal-actions">
+          <a href="#" class="modal-close-btn">Close</a>
+          <a href="#book" class="book-now-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- POPULAR SAFARI EXPERIENCES -->
+  <section class="section" style="padding-top: 0;">
+    <div class="section-header-flex">
+      <div>
+        <span class="section-subtitle">Featured Itineraries</span>
+        <h2 class="section-title">Popular Packages</h2>
+      </div>
+      <a href="#" class="view-details" style="font-size: 0.9rem;">View All Safaris <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="grid-4">
+      <!-- Package 1 -->
+      <div class="exp-card">
+        <div class="exp-img-wrap">
+          <span class="pill-badge">Most Popular</span>
+          <img src="images/Great.jpg" alt="Great Migration Safari">
+        </div>
+        <div class="exp-card-body">
+          <h3>Great Migration Expedition</h3>
+          <p class="exp-location"><i class="fa-solid fa-location-dot"></i> Serengeti National Park</p>
+          <div class="exp-card-footer">
+            <span><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</span>
+            <span class="exp-price">From <span>$1,250</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 2 -->
+      <div class="exp-card">
+        <div class="exp-img-wrap">
+          <img src="images/Crater .jpg" alt="Serengeti Explorer">
+        </div>
+        <div class="exp-card-body">
+          <h3>Serengeti & Crater Explorer</h3>
+          <p class="exp-location"><i class="fa-solid fa-location-dot"></i> Ngorongoro & Serengeti</p>
+          <div class="exp-card-footer">
+            <span><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</span>
+            <span class="exp-price">From <span>$1,450</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 3 -->
+      <div class="exp-card">
+        <div class="exp-img-wrap">
+          <img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?q=80&w=400&auto=format&fit=crop" alt="Big Five Adventure">
+        </div>
+        <div class="exp-card-body">
+          <h3>Big Five Highlight Express</h3>
+          <p class="exp-location"><i class="fa-solid fa-location-dot"></i> Tarangire & Katavi</p>
+          <div class="exp-card-footer">
+            <span><i class="fa-regular fa-clock"></i> 4 Days / 3 Nights</span>
+            <span class="exp-price">From <span>$880</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 4 -->
+      <div class="exp-card">
+        <div class="exp-img-wrap">
+          <img src="images/Bush .jpg" alt="Classic Bush & Beach">
+        </div>
+        <div class="exp-card-body">
+          <h3>Bush & Beach Luxury Escape</h3>
+          <p class="exp-location"><i class="fa-solid fa-location-dot"></i> Serengeti & Zanzibar</p>
+          <div class="exp-card-footer">
+            <span><i class="fa-regular fa-clock"></i> 8 Days / 7 Nights</span>
+            <span class="exp-price">From <span>$1,850</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY TRAVEL WITH US -->
+  <div class="why-us-wrap">
+    <div style="text-align: center;">
+      <span class="section-subtitle" style="color: var(--primary-gold);">Why Choose Us</span>
+      <h2>The Refined Luxury Difference</h2>
+    </div>
+
+    <div class="why-us-grid">
+      <div class="why-box">
+        <div class="why-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="why-text">
+          <h4>Unmatched Local Knowledge</h4>
+          <p>Our native guides possess deep intimacy with nature and wildlife behavior.</p>
+        </div>
+      </div>
+
+      <div class="why-box">
+        <div class="why-icon"><i class="fa-solid fa-tags"></i></div>
+        <div class="why-text">
+          <h4>Best Value Guarantee</h4>
+          <p>Transparent pricing without hidden costs, delivering high-end experiences.</p>
+        </div>
+      </div>
+
+      <div class="why-box">
+        <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+        <div class="why-text">
+          <h4>24/7 Concierge Support</h4>
+          <p>Around-the-clock dedicated personal support throughout your stay.</p>
+        </div>
+      </div>
+
+      <div class="why-box">
+        <div class="why-icon"><i class="fa-solid fa-seedling"></i></div>
+        <div class="why-text">
+          <h4>Eco-Conscious Tourism</h4>
+          <p>A portion of every booking directly benefits conservation and local schools.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner-wrapper">
+    <div class="cta-banner">
+      <div class="cta-left">
+        <h2 class="cta-title">Ready to Start Your Adventure?</h2>
+        <p class="cta-subtitle">Let our luxury travel experts craft your tailored safari experience.</p>
+        <a href="#" class="btn-plan">
+          Plan Your Safari <i class="fa-solid fa-paw"></i>
+        </a>
+      </div>
+
+      <div class="cta-steps">
+        <div class="step-item">
+          <div class="icon-circle">
+            <i class="fa-solid fa-clipboard-list"></i>
+          </div>
+          <div>
+            <h4 class="step-title">1. Share Your Idea</h4>
+            <p class="step-desc">Tell us your timing, budget, and travel preferences.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="icon-circle">
+            <i class="fa-solid fa-compass-drafting"></i>
+          </div>
+          <div>
+            <h4 class="step-title">2. Tailored Design</h4>
+            <p class="step-desc">Our experts design a bespoke day-by-day itinerary.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="icon-circle">
+            <i class="fa-solid fa-plane-departure"></i>
+          </div>
+          <div>
+            <h4 class="step-title">3. Begin Journey</h4>
+            <p class="step-desc">Fly in and experience the wild with complete peace of mind.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/255700000000?text=Hello!%20I%20am%20interested%20in%20planning%20a%20safari%20tour." target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with an Expert</span>
+    </a>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Refined Luxury & Tailor</h3>
+        <p>
+          Experience the magic of Tanzania, from the majestic Serengeti to Zanzibar's white beaches, on an unforgettable safari journey tailored to your exact preferences.
+        </p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/emmanuelyohana" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/emmanuel147322" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/255769128208" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.youtube.com/emmanuely" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Destinations.html">Destinations</a></li>
+          <li><a href="#">Safari Packages</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <ul class="contact-list">
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+            <span>Arusha, Tanzania</span>
+          </li>
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+            <span>+255 769 128 208</span>
+          </li>
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+            <span>+255 663 613 428</span>
+          </li>
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+            <span>info@refinedluxurytailor.com</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Newsletter</h3>
+        <p style="margin-bottom: 15px;">Subscribe for exclusive luxury safari deals and travel tips.</p>
+        <div style="display: flex; gap: 6px;">
+          <input type="email" placeholder="Your email..." style="padding: 10px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: white; width: 100%; font-size: 0.85rem;">
+          <button style="background: #e05d00; border: none; padding: 10px 16px; border-radius: 6px; color: #09100b; font-weight: bold; cursor: pointer;"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Refined Luxury &amp; Tailor Expedition. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

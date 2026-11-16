@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemba Off-Grid Underwater Expedition | Zanzibar Archipelago, Tanzania</title>
+
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Root Variables & Design Tokens */
+        :root {
+            --bg-abyssal: #020c1b;
+            --bg-deep-blue: #0a192f;
+            --bg-card: rgba(11, 15, 25, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --neon-cyan: #00f2fe;
+            --neon-blue: #4facfe;
+            --emerald-glow: #10b981;
+            --biolum-teal: #06b6d4;
+            --gold-sand: #f59e0b;
+            --coral-crimson: #f43f5e;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --glass-border: rgba(0, 242, 254, 0.18);
+            --glass-glow: 0 20px 45px rgba(11, 15, 25, 0.85);
+            --radius-xl: 28px;
+            --radius-lg: 18px;
+            --radius-md: 12px;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Base Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-abyssal);
+            color: var(--text-light);
+            line-height: 1.65;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(79, 172, 254, 0.06) 0%, transparent 55%);
+        }
+
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+ .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 23px 3%;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #d1d5db;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      text-decoration: none;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ff6b00;
+    }
+
+    .btn-book {
+      background-color: #451f05;
+      color: #ffffff;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-book:hover {
+      background-color: #ff6b00;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35);
+    }
+
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* Glassmorphism Card Base */
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            transition: var(--transition);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 242, 254, 0.45);
+            transform: translateY(-6px);
+            box-shadow: var(--glass-glow);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg,  #451f05,  #451f05);
+            color: #ffffff;
+            padding: 15px 34px;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px   #451f05;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 38px  rgba(255, 107, 0, 0.35);
+            background: linear-gradient(135deg, #ff6b00, #ff6b00);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--glass-border);
+            background: var(--bg-glass);
+            color: var(--text-light);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+            background: rgba(0, 242, 254, 0.1);
+        }
+
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding-top: 170px;
+            padding-bottom: 90px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(180deg, rgba(2, 12, 27, 0.5) 0%, var(--bg-abyssal) 100%),
+                        url('images/Abyss .jpg') center/cover no-repeat fixed;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(0deg, var(--bg-abyssal) 0%, transparent 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background:  rgba(11, 15, 25, 0.85);
+            border: 1px solid rgba(0, 242, 254, 0.4);
+            padding: 8px 22px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+        }
+
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--emerald-glow);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .pulse-dot::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: var(--emerald-glow);
+            opacity: 0.6;
+            animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes ping {
+            75%, 100% { transform: scale(2.2); opacity: 0; }
+        }
+
+        .hero-title {
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            line-height: 1.08;
+            margin-bottom: 22px;
+            font-weight: 800;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, #ffffff 0%, var(--neon-cyan) 50%, var(--emerald-glow) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.18rem;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            max-width: 640px;
+        }
+
+        .hero-badge-grid {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 34px;
+        }
+
+        .badge-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--neon-cyan);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-stats-card {
+            padding: 34px;
+            border-radius: var(--radius-xl);
+            background: rgba(11, 15, 25, 0.85);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            border-color: var(--neon-cyan);
+            background: rgba(0, 242, 254, 0.06);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: var(--neon-cyan);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-padding {
+            padding: 110px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-subtitle {
+            color: var(--neon-cyan);
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        /* Bathymetry Profile Visualizer */
+        .bathymetry-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .bath-card {
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bath-card.pemba {
+            border: 1px solid var(--neon-cyan);
+            background: linear-gradient(165deg, rgb(16, 38, 51) 0%, rgba(13, 42, 60, 0.92) 100%);
+        }
+
+        .bath-card.unguja {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: linear-gradient(165deg, rgb(13, 19, 28) 0%, rgba(12, 23, 39, 0.92) 100%);
+        }
+
+        .bath-badge {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-pemba {
+            background: rgba(0, 242, 254, 0.2);
+            color: var(--neon-cyan);
+        }
+
+        .badge-unguja {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+        }
+
+        .bath-diagram {
+            height: 150px;
+            margin: 24px 0;
+            border-radius: var(--radius-md);
+            position: relative;
+            overflow: hidden;
+            background: rgba(2, 12, 27, 0.8);
+            border: 1px solid var(--glass-border);
+        }
+
+        .water-fill-pemba {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 242, 254, 0.6) 0%, rgba(2, 12, 27, 0.95) 100%);
+        }
+
+        .wall-dropoff {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 55%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.4) 0%, rgba(2, 12, 27, 0.9) 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%);
+            border-left: 2px dashed var(--emerald-glow);
+        }
+
+        .depth-line {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 0.85rem;
+            color: var(--neon-cyan);
+            font-weight: 700;
+        }
+
+        .water-fill-unguja {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(79, 172, 254, 0.4) 0%, rgba(10, 25, 47, 0.8) 100%);
+        }
+
+        .shallow-shelf {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 85%;
+            height: 40%;
+            background: rgba(245, 158, 11, 0.3);
+            border-top: 2px dashed rgba(255, 255, 255, 0.3);
+        }
+
+        .bath-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .bath-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+
+        .check-icon { color: var(--neon-cyan); }
+
+        /* Pure CSS Radio Controller Tabs */
+        .tab-controller {
+            display: none;
+        }
+
+        .tab-menu {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: var(--text-light);
+            padding: 14px 26px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+        }
+
+        /* Radio Checked State Styling */
+        #tab1:checked ~ .tab-menu label[for="tab1"],
+        #tab2:checked ~ .tab-menu label[for="tab2"],
+        #tab3:checked ~ .tab-menu label[for="tab3"],
+        #tab4:checked ~ .tab-menu label[for="tab4"] {
+           
+            color: var(--bg-abyssal);
+            border-color: var(--neon-cyan);
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .tab-panel-container {
+            position: relative;
+        }
+
+        .tab-panel {
+            display: none;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 40px;
+            align-items: center;
+            padding: 40px;
+            animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #tab1:checked ~ .tab-panel-container #panel1,
+        #tab2:checked ~ .tab-panel-container #panel2,
+        #tab3:checked ~ .tab-panel-container #panel3,
+        #tab4:checked ~ .tab-panel-container #panel4 {
+            display: grid;
+        }
+
+        .panel-img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        .panel-tag {
+            color: var(--gold-sand);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .panel-title {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .panel-desc {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 1.05rem;
+        }
+
+        .panel-meta {
+            display: flex;
+            gap: 24px;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 20px;
+        }
+
+        .meta-box span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .meta-box strong {
+            color: var(--neon-cyan);
+            font-size: 1rem;
+        }
+
+        /* Head to Head Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 24px;
+        }
+
+        .spot-card {
+            padding: 32px 26px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .spot-header {
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .spot-name {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .spot-type {
+            font-size: 0.8rem;
+            color: var(--emerald-glow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .rating-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        .rating-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88rem;
+        }
+
+        .rating-val {
+            color: var(--neon-cyan);
+            font-weight: 700;
+        }
+
+        /* Spotter Grid & Pure CSS Lightbox Modals */
+        .spotter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .spotter-card {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 340px;
+            display: block;
+        }
+
+        .spotter-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .spotter-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .spotter-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 30%, rgba(2, 12, 27, 0.95) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+        }
+
+        /* Pure CSS Target Lightbox Modals */
+        .css-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(2, 12, 27, 0.94);
+            backdrop-filter: blur(16px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+            padding: 20px;
+        }
+
+        .css-modal:target {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: var(--bg-deep-blue);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            max-width: 650px;
+            width: 100%;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: var(--coral-crimson);
+        }
+
+        /* Expedition Pricing Packages */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .price-card {
+            padding: 42px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border: 1px solid var(--neon-cyan);
+            background: linear-gradient(180deg, rgba(10, 15, 29, 0.6) 0%, rgba(10, 15, 29, 0.85) 100%);
+        }
+
+        .price-tag {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-light);
+            margin: 16px 0;
+        }
+
+        .price-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .price-features li {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Pure CSS FAQ Accordion */
+        .accordion-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: var(--bg-card);
+        }
+
+        .accordion-checkbox {
+            display: none;
+        }
+
+        .accordion-label {
+            padding: 22px 26px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: var(--transition);
+        }
+
+        .accordion-label:hover {
+            color: var(--neon-cyan);
+        }
+
+        .accordion-icon {
+            transition: transform 0.4s ease;
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 26px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .accordion-checkbox:checked ~ .accordion-body {
+            max-height: 260px;
+            padding: 0 26px 22px 26px;
+        }
+
+        .accordion-checkbox:checked ~ .accordion-label .accordion-icon {
+            transform: rotate(180deg);
+            color: var(--neon-cyan);
+        }
+
+    </style>
+</head>
+<body>
+
+ <header class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Company Logo">
+      <span class="logo-text">REFINED LUXURY &amp; TAILOR</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="Destinations.html" class="active">Destinations</a>
+      <a href="safaris.html">Safari</a>
+      <a href="packages.html">Our Package</a>
+      <a href="about.html">About Travel</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <button class="btn-book">Book Now</button>
+  </header>
+
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="live-badge">
+                    <div class="pulse-dot"></div>
+                    <span style="font-size:0.85rem; font-weight:700; color:var(--neon-cyan); letter-spacing:1px; text-transform:uppercase;">Untamed Pemba Channel Wilderness</span>
+                </div>
+                <h1 class="hero-title">
+                    Into the Deep Emerald Abyss <span>Pemba Expedition</span>
+                </h1>
+                <p class="hero-desc">
+                    Ascend beyond mainland tourism into the wild, untouched realm of Pemba Island. Experience 800m vertical abyssal drop-offs, pristine Misali reefs, schooling hammerheads, and the world-famous Floating Underwater Room.
+                </p>
+                <div class="hero-badge-grid">
+                    <span class="badge-tag"><i class="fa-solid fa-dharmachakra"></i> Non-Touristic Wilderness</span>
+                    <span class="badge-tag"><i class="fa-solid fa-mountain"></i> Vertical Coral Walls</span>
+                    <span class="badge-tag"><i class="fa-solid fa-bed"></i> Underwater Room Haven</span>
+                    <span class="badge-tag"><i class="fa-solid fa-bolt"></i> Bio-Luminescent Dives</span>
+                </div>
+                <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                    <a href="#itinerary" class="btn-primary"><i class="fa-solid fa-calendar-days"></i> Explore 4-Day Timeline</a>
+                    <a href="#overview" class="btn-outline">Bathymetry & Drop-offs</a>
+                </div>
+            </div>
+
+            <!-- Hero Floating Highlights Card -->
+            <div class="hero-stats-card glass-card">
+                <h3 class="font-serif" style="font-size:1.5rem; margin-bottom:20px; color:white; text-align:center;">Abyssal Expedition Facts</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">800m+</div>
+                        <div class="stat-label">Channel Drop-off</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">40m</div>
+                        <div class="stat-label">Crystal Visibility</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Misali</div>
+                        <div class="stat-label">Protected Sanctuary</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">360°</div>
+                        <div class="stat-label">Pelagic Haven</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview & Bathymetry Section -->
+    <section id="overview" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Deep Channel Bathymetry</span>
+                <h2 class="section-title">Pemba Island vs. Main Zanzibar (Unguja)</h2>
+                <p style="color:var(--text-muted);">Discover why Pemba Island is celebrated as East Africa's premier deep wall diving capital.</p>
+            </div>
+
+            <div class="bathymetry-grid">
+                <!-- Pemba Wall Profile -->
+                <div class="glass-card bath-card pemba">
+                    <span class="bath-badge badge-pemba">Pemba Island (Off-Grid North)</span>
+                    <h3 style="font-size:1.8rem; margin-bottom:10px;">Sheer Abyssal Drop-off & Vertical Coral Walls</h3>
+                    <p style="color:var(--text-muted); font-size:0.95rem;">Surrounded by the deep Pemba Channel, the island plunges rapidly to depths over 800m. Upwelling oceanic currents feed giant sea fans, pelagic predators, and pristine coral gardens.</p>
+                    
+                    <div class="bath-diagram">
+                        <div class="water-fill-pemba"></div>
+                        <div class="wall-dropoff"></div>
+                        <div class="depth-line"><i class="fa-solid fa-arrow-down-long"></i> Plunges 800m into Pemba Channel</div>
+                    </div>
+
+                    <ul class="bath-list">
+                        <li><i class="fa-solid fa-check check-icon"></i> Non-stop deep wall diving independent of tidal recessions</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> High probability of Hammerhead, Manta, and Trevally encounters</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Secluded, zero-crowd marine sanctuaries</li>
+                    </ul>
+                </div>
+
+                <!-- Unguja Profile -->
+                <div class="glass-card bath-card unguja">
+                    <span class="bath-badge badge-unguja">Unguja / Main Zanzibar</span>
+                    <h3 style="font-size:1.8rem; margin-bottom:10px;">Shallow Continental Shelf & Sandy Flats</h3>
+                    <p style="color:var(--text-muted); font-size:0.95rem;">Main Zanzibar rests on a shallow coastal shelf. While rich in reef lagoons, low tide pulls the ocean back dramatically along the East Coast, limiting deep water wall access.</p>
+                    
+                    <div class="bath-diagram">
+                        <div class="water-fill-unguja"></div>
+                        <div class="shallow-shelf"></div>
+                        <div class="depth-line" style="color:var(--text-muted);"><i class="fa-solid fa-water"></i> Average Depth: 10m - 35m</div>
+                    </div>
+
+                    <ul class="bath-list">
+                        <li><i class="fa-solid fa-check check-icon"></i> Lagoon snorkeling and shallow coral gardens</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Tides pull back up to 1.5 km twice daily</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> High resort density & busier dive sites</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Section (Pure CSS Radio Tabs) -->
+    <section id="itinerary" class="section-padding" style="background: rgba(0,0,0,0.25);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Curated Expedition Itinerary</span>
+                <h2 class="section-title">4-Day Deep Blue Wilderness Journey</h2>
+                <p style="color:var(--text-muted);">Select a day below to explore your off-grid dive sequence.</p>
+            </div>
+
+            <!-- Pure CSS Controller Radio Buttons -->
+            <input type="radio" id="tab1" name="expedition-tabs" class="tab-controller" checked>
+            <input type="radio" id="tab2" name="expedition-tabs" class="tab-controller">
+            <input type="radio" id="tab3" name="expedition-tabs" class="tab-controller">
+            <input type="radio" id="tab4" name="expedition-tabs" class="tab-controller">
+
+            <div class="tab-menu">
+                <label for="tab1" class="tab-btn"><i class="fa-solid fa-plane-arrival"></i> Day 1: Manta Reef Arrival</label>
+                <label for="tab2" class="tab-btn"><i class="fa-solid fa-shield-halved"></i> Day 2: Misali Coral Sanctuary</label>
+                <label for="tab3" class="tab-btn"><i class="fa-solid fa-water-ladder"></i> Day 3: Mtangani Vertical Wall</label>
+                <label for="tab4" class="tab-btn"><i class="fa-solid fa-moon"></i> Day 4: Underwater Room & Bio-Night</label>
+            </div>
+
+            <div class="tab-panel-container">
+                <!-- Panel 1 -->
+                <div class="glass-card tab-panel" id="panel1">
+                    <img src="images/Manta Reef Warm.jpg" alt="Manta Reef Warm up" class="panel-img">
+                    <div>
+                        <span class="panel-tag">Day 1 • Pemba Channel Arrival</span>
+                        <h3 class="panel-title">Manta Reef Warm-Up & Drift Dive</h3>
+                        <p class="panel-desc">Touch down at Chake Chake airstrip or arrive via private dhow charter. After checking into your off-grid eco-lodge, embark on an afternoon warm-up drift dive along Manta Reef's undulating coral pinnacles.</p>
+                        <div class="panel-meta">
+                            <div class="meta-box">
+                                <span>Dive Target</span>
+                                <strong>Manta Reef Pinnacles</strong>
+                            </div>
+                            <div class="meta-box">
+                                <span>Max Depth / Vis</span>
+                                <strong>22m / 35m Visibility</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 2 -->
+                <div class="glass-card tab-panel" id="panel2">
+                    <img src="images/Misali Island Coral Wall.jpg" alt="Misali Island" class="panel-img">
+                    <div>
+                        <span class="panel-tag">Day 2 • Marine Protection Zone</span>
+                        <h3 class="panel-title">Misali Island Coral Wall & Turtle Reserve</h3>
+                        <p class="panel-desc">Boat west to Misali Island Marine Conservation Area, home to over 40 species of coral and nesting hawksbill turtles. Dive the steep coral slopes where giant Napoleon wrasse and hawksbills roam freely.</p>
+                        <div class="panel-meta">
+                            <div class="meta-box">
+                                <span>Dive Target</span>
+                                <strong>Misali Coral Gardens</strong>
+                            </div>
+                            <div class="meta-box">
+                                <span>Highlight</span>
+                                <strong>Nesting Hawksbill Turtles</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 3 -->
+                <div class="glass-card tab-panel" id="panel3">
+                    <img src="images/Mtangani Vertical Drop-Off &.jpg" alt="Mtangani Drop off" class="panel-img">
+                    <div>
+                        <span class="panel-tag">Day 3 • Deep Abyssal Drift</span>
+                        <h3 class="panel-title">Mtangani Vertical Drop-Off & Pelagic Drift</h3>
+                        <p class="panel-desc">Geared for experienced divers, jump along Mtangani's sheer vertical abyss. Drift along wall faces draped in black coral trees and gorgonian fans while keeping an eye out into the blue for scalloped hammerhead sharks.</p>
+                        <div class="panel-meta">
+                            <div class="meta-box">
+                                <span>Dive Target</span>
+                                <strong>Mtangani Wall (30m+)</strong>
+                            </div>
+                            <div class="meta-box">
+                                <span>Pelagic Encounter</span>
+                                <strong>Schooling Hammerhead Sharks</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 4 -->
+                <div class="glass-card tab-panel" id="panel4">
+                    <img src="images/Floating Underwater Room &.jpg" alt="Underwater Room" class="panel-img">
+                    <div>
+                        <span class="panel-tag">Day 4 • Bioluminescent Twilight</span>
+                        <h3 class="panel-title">Floating Underwater Room & Night Safari</h3>
+                        <p class="panel-desc">Check into the world-renowned Floating Underwater Room moored in a coral lagoon. As dusk falls, conduct a bio-luminescent night dive, then sleep 4 meters below the sea surface wrapped in illuminated turquoise waters.</p>
+                        <div class="panel-meta">
+                            <div class="meta-box">
+                                <span>Accommodation</span>
+                                <strong>Floating Underwater Room</strong>
+                            </div>
+                            <div class="meta-box">
+                                <span>Highlight</span>
+                                <strong>Bioluminescent Reef Night Dive</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Head to Head Dive Spots Grid -->
+    <section id="dive-spots" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Pemba Dive Spot Matrix</span>
+                <h2 class="section-title">Head-to-Head Sanctuary Ratings</h2>
+                <p style="color:var(--text-muted);">Compare key parameters across Pemba's four top dive zones.</p>
+            </div>
+
+            <div class="comparison-grid">
+                <!-- Spot 1 -->
+                <div class="glass-card spot-card">
+                    <div>
+                        <div class="spot-header">
+                            <h3 class="spot-name">Misali Sanctuary</h3>
+                            <span class="spot-type">Protected Coral Garden</span>
+                        </div>
+                        <p style="color:var(--text-muted); font-size:0.9rem;">Shallow coral banks extending into steep slopes with pristine turtle nesting habitats.</p>
+                    </div>
+                    <div class="rating-list">
+                        <div class="rating-row"><span>Depth Range</span> <span class="rating-val">5m - 35m</span></div>
+                        <div class="rating-row"><span>Coral Health</span> <span class="rating-val">9.9 / 10</span></div>
+                        <div class="rating-row"><span>Current Strength</span> <span class="rating-val">Mild / Moderate</span></div>
+                        <div class="rating-row"><span>Skill Level</span> <span class="rating-val">Open Water +</span></div>
+                    </div>
+                </div>
+
+                <!-- Spot 2 -->
+                <div class="glass-card spot-card" style="border-color:var(--neon-cyan);">
+                    <div>
+                        <div class="spot-header">
+                            <h3 class="spot-name">Mtangani Wall</h3>
+                            <span class="spot-type" style="color:var(--neon-cyan);">Vertical Abyssal Wall</span>
+                        </div>
+                        <p style="color:var(--text-muted); font-size:0.9rem;">Sheer 800m drop-off into the Pemba Channel. Prime territory for large pelagics.</p>
+                    </div>
+                    <div class="rating-list">
+                        <div class="rating-row"><span>Depth Range</span> <span class="rating-val">18m - 40m+</span></div>
+                        <div class="rating-row"><span>Pelagic Encounters</span> <span class="rating-val">9.8 / 10</span></div>
+                        <div class="rating-row"><span>Current Strength</span> <span class="rating-val">Strong Drift</span></div>
+                        <div class="rating-row"><span>Skill Level</span> <span class="rating-val">Advanced OW</span></div>
+                    </div>
+                </div>
+
+                <!-- Spot 3 -->
+                <div class="glass-card spot-card">
+                    <div>
+                        <div class="spot-header">
+                            <h3 class="spot-name">Pemba Gap</h3>
+                            <span class="spot-type">Channel Pass</span>
+                        </div>
+                        <p style="color:var(--text-muted); font-size:0.9rem;">Dramatic channel gap where massive sea fans sway in nutrient-rich oceanic currents.</p>
+                    </div>
+                    <div class="rating-list">
+                        <div class="rating-row"><span>Depth Range</span> <span class="rating-val">15m - 30m</span></div>
+                        <div class="rating-row"><span>Gorgonian Fans</span> <span class="rating-val">9.6 / 10</span></div>
+                        <div class="rating-row"><span>Current Strength</span> <span class="rating-val">Moderate Drift</span></div>
+                        <div class="rating-row"><span>Skill Level</span> <span class="rating-val">Advanced OW</span></div>
+                    </div>
+                </div>
+
+                <!-- Spot 4 -->
+                <div class="glass-card spot-card">
+                    <div>
+                        <div class="spot-header">
+                            <h3 class="spot-name">Emerald Reef</h3>
+                            <span class="spot-type">Lagoon & Macro Haven</span>
+                        </div>
+                        <p style="color:var(--text-muted); font-size:0.9rem;">Sheltered lagoon waters brimming with nudibranchs, frogfish, and bio-luminescence.</p>
+                    </div>
+                    <div class="rating-list">
+                        <div class="rating-row"><span>Depth Range</span> <span class="rating-val">4m - 18m</span></div>
+                        <div class="rating-row"><span>Macro Diversity</span> <span class="rating-val">9.5 / 10</span></div>
+                        <div class="rating-row"><span>Current Strength</span> <span class="rating-val">Calm / Gentle</span></div>
+                        <div class="rating-row"><span>Skill Level</span> <span class="rating-val">All Levels</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marine Life Spotter & Lightbox Modals -->
+    <section id="marine" class="section-padding" style="background: rgba(0,0,0,0.25);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Sanctuary Spotter</span>
+                <h2 class="section-title">Pelagic Marine Life Encounters</h2>
+                <p style="color:var(--text-muted);">Click any card below to open detailed ecosystem information (Pure CSS Modal Lightbox).</p>
+            </div>
+
+            <div class="spotter-grid">
+                <!-- Spotter Card 1 -->
+                <a href="#modal-misali" class="spotter-card glass-card">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=600&auto=format&fit=crop" alt="Misali Coral">
+                    <div class="spotter-overlay">
+                        <span style="color:var(--neon-cyan); font-size:0.75rem; text-transform:uppercase; font-weight:700;">Protected Marine Zone</span>
+                        <h4 style="font-size:1.4rem; color:white;">Misali Island Reef</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted);">Click to inspect sanctuary rules & hawksbill conservation.</p>
+                    </div>
+                </a>
+
+                <!-- Spotter Card 2 -->
+                <a href="#modal-underwater" class="spotter-card glass-card">
+                    <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?q=80&w=600&auto=format&fit=crop" alt="Floating Room">
+                    <div class="spotter-overlay">
+                        <span style="color:var(--gold-sand); font-size:0.75rem; text-transform:uppercase; font-weight:700;">Exclusive Offshore Structure</span>
+                        <h4 style="font-size:1.4rem; color:white;">The Floating Underwater Room</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted);">Click to inspect sub-surface bedroom specs.</p>
+                    </div>
+                </a>
+
+                <!-- Spotter Card 3 -->
+                <a href="#modal-pelagics" class="spotter-card glass-card">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop" alt="Hammerheads">
+                    <div class="spotter-overlay">
+                        <span style="color:var(--coral-crimson); font-size:0.75rem; text-transform:uppercase; font-weight:700;">Pelagic Predators</span>
+                        <h4 style="font-size:1.4rem; color:white;">Hammerheads & Manta Rays</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted);">Click to inspect seasonal migration schedules.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pure CSS Lightbox Modals (:target) -->
+    <div id="modal-misali" class="css-modal">
+        <div class="modal-content">
+            <a href="#marine" class="modal-close">&times;</a>
+            <h3 style="font-size:1.8rem; margin-bottom:12px; color:var(--neon-cyan);">Misali Island Marine Sanctuary</h3>
+            <p style="color:var(--text-muted); margin-bottom:16px;">Located 10km off Pemba's west coast, Misali Island features unrivaled coral biodiversity with 42 coral genera and over 300 fish species. Strictly managed as an eco-sanctuary with zero commercial fishing allowed.</p>
+            <span style="display:inline-block; padding:6px 16px; background:rgba(0,242,254,0.15); color:var(--neon-cyan); border-radius:50px; font-size:0.85rem; font-weight:700;">Best Visibility: October to March</span>
+        </div>
+    </div>
+
+    <div id="modal-underwater" class="css-modal">
+        <div class="modal-content">
+            <a href="#marine" class="modal-close">&times;</a>
+            <h3 style="font-size:1.8rem; margin-bottom:12px; color:var(--gold-sand);">Floating Underwater Room Haven</h3>
+            <p style="color:var(--text-muted); margin-bottom:16px;">Moored 250m off the Pemba shoreline at Manta Resort. The upper deck features roof lounge beds for stargazing, while the submerged bedroom delivers 360-degree glass views of reef fish attracted by underwater spotlights.</p>
+            <span style="display:inline-block; padding:6px 16px; background:rgba(245,158,11,0.15); color:var(--gold-sand); border-radius:50px; font-size:0.85rem; font-weight:700;">Exclusive: 1 Room Only on Island</span>
+        </div>
+    </div>
+
+    <div id="modal-pelagics" class="css-modal">
+        <div class="modal-content">
+            <a href="#marine" class="modal-close">&times;</a>
+            <h3 style="font-size:1.8rem; margin-bottom:12px; color:var(--coral-crimson);">Pelagic Hammerhead & Manta Migration</h3>
+            <p style="color:var(--text-muted); margin-bottom:16px;">Because Pemba sits alongside deep oceanic trenches, upwelling currents draw giant manta rays, eagle rays, barracudas, and schools of scalloped hammerhead sharks close to the vertical wall faces.</p>
+            <span style="display:inline-block; padding:6px 16px; background:rgba(244,63,94,0.15); color:var(--coral-crimson); border-radius:50px; font-size:0.85rem; font-weight:700;">Prime Season: November - February</span>
+        </div>
+    </div>
+
+    <!-- Expedition Packages -->
+    <section id="pricing" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Expedition Packages</span>
+                <h2 class="section-title">Select Your Expedition Tier</h2>
+                <p style="color:var(--text-muted);">Off-grid wilderness packages tailored for diver levels and luxury seekers.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Package 1 -->
+                <div class="glass-card price-card">
+                    <div>
+                        <span style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; font-weight:700;">Eco Diver</span>
+                        <h3 style="font-size:1.6rem; margin-top:4px;">Wilderness Pass</h3>
+                        <div class="price-tag">$650 <span style="font-size:1rem; color:var(--text-muted); font-family:sans-serif;">/ person</span></div>
+                        <ul class="price-features">
+                            <li><i class="fa-solid fa-check check-icon"></i> 2 Days Guided Boat Diving (4 Tanks)</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Misali Island Marine Sanctuary Permit</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Eco-Lodge Beach Bungalow Stay</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Full Scuba Gear Rental & Nitrox Option</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn-outline" style="justify-content:center;">Book Eco Diver</a>
+                </div>
+
+                <!-- Package 2 Featured -->
+                <div class="glass-card price-card featured">
+                    <div>
+                        <span style="font-size:0.8rem; color:var(--neon-cyan); text-transform:uppercase; letter-spacing:1px; font-weight:700;">Most Popular</span>
+                        <h3 style="font-size:1.6rem; margin-top:4px;">Boutique Deep Blue Explorer</h3>
+                        <div class="price-tag" style="color:var(--neon-cyan);">$1,850 <span style="font-size:1rem; color:var(--text-muted); font-family:sans-serif;">/ person</span></div>
+                        <ul class="price-features">
+                            <li><i class="fa-solid fa-check check-icon"></i> 4 Days Complete Expedition (8 Tanks)</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Domestic Flight Transfer from Stone Town</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Misali Island & Mtangani Wall Excursions</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Luxury Oceanfront Villa & Chef Meals</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn-primary" style="justify-content:center;">Book Deep Blue Explorer</a>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="glass-card price-card">
+                    <div>
+                        <span style="font-size:0.8rem; color:var(--gold-sand); text-transform:uppercase; letter-spacing:1px; font-weight:700;">Ultra Luxe VIP</span>
+                        <h3 style="font-size:1.6rem; margin-top:4px;">Underwater Room Expedition</h3>
+                        <div class="price-tag">$3,900 <span style="font-size:1rem; color:var(--text-muted); font-family:sans-serif;">/ person</span></div>
+                        <ul class="price-features">
+                            <li><i class="fa-solid fa-check check-icon"></i> Private Charter Flight & Yacht Transfers</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> 1 Night Stay in Floating Underwater Room</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Unlimited Dive Master Guided Wall Dives</li>
+                            <li><i class="fa-solid fa-check check-icon"></i> Bioluminescent Night Dive & Fine Dining</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn-outline" style="justify-content:center;">Book Underwater Room</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion (Pure CSS Checkboxes) -->
+    <section id="faq" class="section-padding" style="background: rgba(0,0,0,0.25);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Travel Logistics</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p style="color:var(--text-muted);">Key practicalities for planning your Pemba Island off-grid dive escape.</p>
+            </div>
+
+            <div class="accordion-container">
+                <!-- FAQ Item 1 -->
+                <div class="accordion-item">
+                    <input type="checkbox" id="acc1" class="accordion-checkbox">
+                    <label for="acc1" class="accordion-label">
+                        <span>How do I reach Pemba Island from Stone Town or Dar es Salaam?</span>
+                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </label>
+                    <div class="accordion-body">
+                        The easiest way is a short 30-minute domestic hop on regional carriers (e.g., Coastal Aviation, Auric Air) from Stone Town (ZNZ) or Dar es Salaam (DAR) to Chake Chake Airport (PMA). Alternatively, fast ferries connect Stone Town to Mkoani Port in Pemba.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="accordion-item">
+                    <input type="checkbox" id="acc2" class="accordion-checkbox">
+                    <label for="acc2" class="accordion-label">
+                        <span>What diving certifications are required for Pemba wall dives?</span>
+                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </label>
+                    <div class="accordion-body">
+                        While Misali Island offer shallow, calm reefs suitable for Open Water divers, the Mtangani and Pemba Gap wall drop-offs involve currents and depths up to 30m+, making an Advanced Open Water certification (or minimum 30 logged dives) highly recommended.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="accordion-item">
+                    <input type="checkbox" id="acc3" class="accordion-checkbox">
+                    <label for="acc3" class="accordion-label">
+                        <span>When is the best season for visibility and Manta Ray sightings?</span>
+                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </label>
+                    <div class="accordion-body">
+                        The prime diving season runs from October to March when seas are calmest and water visibility reaches up to 40 meters. Manta Ray migrations and pelagic sightings peak between November and February.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="accordion-item">
+                    <input type="checkbox" id="acc4" class="accordion-checkbox">
+                    <label for="acc4" class="accordion-label">
+                        <span>How off-grid are the lodges and what eco-practices are used?</span>
+                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </label>
+                    <div class="accordion-body">
+                        Pemba lodges prioritize sustainability by operating on solar power micro-grids, rainwater harvesting systems, organic local farming, and strict marine conservation partnerships with local fishermen.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

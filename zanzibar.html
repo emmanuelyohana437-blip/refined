@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zanzibar Holiday | Refined Luxury &amp; Tailor</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-dark: #0b252c;
+      --secondary-teal: #1a4d4e;
+      --accent-gold: #ff6b00;
+      --accent-orange: #ff6b00;
+      --accent-brown: #451f05;
+      --bg-light: #f8faf9;
+      --card-bg: #ffffff;
+      --text-main: #2b303a;
+      --text-muted: #6b7280;
+      --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 12px 35px rgba(0, 0, 0, 0.1);
+      --radius-sm: 8px;
+      --radius-lg: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* --- NAVBAR --- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 21px 3%;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+    }
+
+    .nav-links a {
+      color: #d1d5db;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      text-decoration: none;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ff6b00;
+    }
+
+    .btn-book {
+      background-color: #451f05;
+      color: #ffffff;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-book:hover {
+      background-color: #ff6b00;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35);
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      height: 85vh;
+      min-height: 550px;
+      background: linear-gradient(rgba(11, 37, 44, 0.55), rgba(11, 37, 44, 0.65)),
+                  url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      padding: 0 20px;
+      margin-top: 75px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      animation: fadeUp 1s ease;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      opacity: 0.95;
+      max-width: 680px;
+      margin: 0 auto 35px;
+      font-weight: 300;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background-color: #451f05;
+      color: #ffffff;
+      padding: 14px 38px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+    }
+
+    .hero-btn:hover {
+      background: var(--accent-orange);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(255, 107, 0, 0.4);
+    }
+
+    /* --- SECTIONS COMMON --- */
+    .section-padding {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 35px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent-gold);
+      border-radius: 2px;
+    }
+
+    /* --- LUXURY DESTINATIONS GRID --- */
+    .luxury-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .dest-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    .dest-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .location-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-gold);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .dest-card h3 {
+      font-size: 1.4rem;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+
+    .dest-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .resort-list {
+      list-style: none;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 1.2rem;
+    }
+
+    .resort-item {
+      margin-bottom: 1rem;
+    }
+
+    .resort-item strong {
+      color: var(--secondary-teal);
+      display: block;
+      font-size: 1rem;
+    }
+
+    .resort-item span {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* --- EXPERIENCES GRID --- */
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .exp-card {
+      background: var(--card-bg);
+      border-left: 4px solid var(--accent-gold);
+      padding: 1.5rem;
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      box-shadow: var(--shadow-sm);
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+      border-right: 1px solid rgba(0, 0, 0, 0.04);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+    }
+
+    .exp-card:hover {
+      transform: translateX(5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .exp-card h4 {
+      font-size: 1.2rem;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .exp-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* --- TABLES --- */
+    .table-container {
+      overflow-x: auto;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card-bg);
+    }
+
+    .custom-table th, 
+    .custom-table td {
+      padding: 1.2rem 1.5rem;
+      text-align: left;
+    }
+
+    .custom-table th {
+      background-color: var(--primary-dark);
+      color: var(--accent-gold);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .custom-table tr:not(:last-child) td {
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* --- GALLERY SECTION --- */
+    .gallery-section {
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .galle {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      height: 220px;
+    }
+
+    .galle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .galle:hover img {
+      transform: scale(1.1);
+    }
+
+    /* --- SIDEBAR FILTER --- */
+    .filter-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 100px;
+    }
+
+    .filter-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 22px;
+      border-bottom: 2px solid var(--accent-gold);
+      padding-bottom: 8px;
+    }
+
+    .form-check-label {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+
+    /* --- TRIP CARDS --- */
+    .trip-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (min-width: 768px) {
+      .trip-card {
+        flex-direction: row;
+        min-height: 290px;
+      }
+    }
+
+    .trip-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .trip-image-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .trip-image-wrap {
+        width: 42%;
+      }
+    }
+
+    .trip-image {
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.5s ease;
+    }
+
+    .trip-card:hover .trip-image {
+      transform: scale(1.06);
+    }
+
+    .badge-category {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: rgba(11, 37, 44, 0.85);
+      color: var(--accent-gold);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      backdrop-filter: blur(4px);
+      letter-spacing: 0.5px;
+    }
+
+    .trip-details {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+    }
+
+    .trip-details h3 {
+      font-size: 1.6rem;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .trip-highlights {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .trip-highlights li {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+    }
+
+    .trip-highlights li i {
+      color: var(--accent-gold);
+      margin-right: 10px;
+    }
+
+    .route-text {
+      font-size: 0.85rem;
+      color: var(--secondary-teal);
+      font-weight: 600;
+      background: #edf5f5;
+      padding: 8px 14px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .card-footer-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 18px;
+    }
+
+    .trip-price {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .trip-price span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .btn-view-trip {
+      background-color: var(--accent-brown);
+      color: #ffffff;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-view-trip:hover {
+      background-color: var(--accent-orange);
+      color: #ffffff;
+    }
+
+    /* --- FOOTER --- */
+    .site-footer {
+      background: linear-gradient(180deg, #0b252c 0%, #040d10 100%);
+      padding: 80px 8% 30px;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      color: #a0a5b1;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr 1.5fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-col h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: #ffffff;
+      position: relative;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 35px;
+      height: 3px;
+      background-color: var(--accent-gold);
+    }
+
+    .footer-col p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #a0a5b1;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-gold);
+      padding-left: 5px;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contact-list li {
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contact-icon-box {
+      width: 36px;
+      height: 36px;
+      background-color: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-gold);
+      flex-shrink: 0;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-icons a {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--accent-gold);
+      color: var(--primary-dark);
+      transform: translateY(-4px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.85rem;
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25D366;
+      color: #ffffff;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+      z-index: 9999;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      color: white;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .trip-details {
+        padding: 20px;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Logo" onerror="this.style.display='none'">
+      <span class="logo-text">REFINED LUXURY &amp; TAILOR</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Destinations.html" class="active">Destinations</a></li>
+      <li><a href="safaris.html">Safari</a></li>
+      <li><a href="packages.html">Our Packages</a></li>
+      <li><a href="about.html">About Travel</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <button class="btn-book">Book Now</button>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Zanzibar Luxury Holidays</h1>
+      <p>Are you planning a Zanzibar getaway? The Zanzibar Archipelago is a world-class beach paradise. Discover our handcrafted itineraries for Zanzibar, Pemba &amp; Mafia Island.</p>
+      <a href="#trips" class="hero-btn">Explore Packages</a>
+    </div>
+  </section>
+
+  <!-- LUXURY DESTINATIONS & EXPERIENCES SECTION -->
+  <div class="container section-padding">
+    
+    <!-- Top Destinations -->
+    <section class="mb-5">
+      <h2 class="section-title">Top Luxury Destinations</h2>
+      <div class="luxury-grid">
+        
+        <article class="dest-card">
+          <span class="location-tag">North Coast</span>
+          <h3>Nungwi &amp; Kendwa</h3>
+          <p>Famous for non-tidal, crystal-clear turquoise waters available for swimming all day long.</p>
+          <ul class="resort-list">
+            <li class="resort-item">
+              <strong>Zuri Zanzibar</strong>
+              <span>Member of Design Hotels, private villas, spice gardens.</span>
+            </li>
+            <li class="resort-item">
+              <strong>The Riu Palace Zanzibar</strong>
+              <span>All-inclusive luxury featuring oceanfront suites &amp; fine dining.</span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="dest-card">
+          <span class="location-tag">East Coast</span>
+          <h3>Matemwe &amp; Michamvi</h3>
+          <p>Ideal for ultimate seclusion, low-density luxury, and untouched coral reefs.</p>
+          <ul class="resort-list">
+            <li class="resort-item">
+              <strong>&amp;Beyond Mnemba Island</strong>
+              <span>Ultra-exclusive private island sanctuary with 12 luxury suites.</span>
+            </li>
+            <li class="resort-item">
+              <strong>The Palms &amp; Baraza Resort</strong>
+              <span>Swahili-Arabic grandeur, private plunge pools &amp; personal butler service.</span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="dest-card">
+          <span class="location-tag">Pemba Island</span>
+          <h3>Off-Grid Sanctuary</h3>
+          <p>A pristine untouched island surrounded by deep marine channels and lush rainforests.</p>
+          <ul class="resort-list">
+            <li class="resort-item">
+              <strong>The Manta Resort</strong>
+              <span>Home to the world-famous underwater bedroom suite.</span>
+            </li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Signature Experiences -->
+    <section class="mb-5">
+      <h2 class="section-title">Signature Luxury Experiences</h2>
+      <div class="exp-grid">
+        <div class="exp-card">
+          <h4>Private Dhow Cruises</h4>
+          <p>Charter a traditional luxury wooden dhow for sunset champagne sails around Kendwa or Menai Bay.</p>
+        </div>
+        <div class="exp-card">
+          <h4>Mnemba Atoll Diving</h4>
+          <p>Private yacht charters to rich coral gardens with wild dolphins and marine turtles.</p>
+        </div>
+        <div class="exp-card">
+          <h4>The Rock Restaurant</h4>
+          <p>Iconic dining experience built on a natural coral rock formation in the Indian Ocean.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best Time to Visit -->
+    <section>
+      <h2 class="section-title">Best Time to Visit</h2>
+      <div class="table-container">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Season</th>
+              <th>Months</th>
+              <th>Highlights</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Dry Season</strong></td>
+              <td>June to October</td>
+              <td>Clear blue skies, comfortable temperatures (25°C–28°C), and perfect beach weather.</td>
+            </tr>
+            <tr>
+              <td><strong>Hot Dry Season</strong></td>
+              <td>December to February</td>
+              <td>Warm tropical ocean temperatures, best for scuba diving and marine activities.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- GALLERY SECTION -->
+  <section class="gallery-section">
+    <div class="container">
+      <h2 class="section-title">Zanzibar Gallery</h2>
+      <div class="gallery-grid">
+        <div class="galle">
+          <img src="images/holi.jpg" alt="Zanzibar Beach 1">
+        </div>
+       
+        <div class="galle">
+          <img src="images/Matemwe &.jpg" alt="Zanzibar Resort">
+        </div>
+
+        <div class="galle">
+          <img src="images/nu.jpg" alt="Zanzibar Ocean View">
+        </div>
+        
+         <div class="galle">
+          <img src="images/Pemba Off-Grid.jpg" alt="Zanzibar Beach 2">
+        </div>
+
+        <div class="galle">
+          <img src="images/ho.jpg" alt="Zanzibar Sunset">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN PACKAGES SECTION -->
+  <div class="container section-padding" id="trips">
+    <div class="row">
+
+      <!-- Filter Sidebar -->
+      <aside class="col-lg-3 mb-4 mb-lg-0">
+        <div class="filter-card">
+          <h4 class="filter-title">Filter Packages</h4>
+
+          <!-- Trip Type Filters -->
+          <div class="mb-4">
+            <h6 class="fw-bold mb-3">Trip Type</h6>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="familyCheck" checked>
+              <label class="form-check-label" for="familyCheck">Family &amp; Friends</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="honeymoonCheck" checked>
+              <label class="form-check-label" for="honeymoonCheck">Honeymoon Specials</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="luxuryCheck" checked>
+              <label class="form-check-label" for="luxuryCheck">Luxury Beach Safaris</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="offgridCheck" checked>
+              <label class="form-check-label" for="offgridCheck">Off-Grid &amp; Eco Sanctuaries</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="divingCheck">
+              <label class="form-check-label" for="divingCheck">Diving &amp; Marine Excursions</label>
+            </div>
+          </div>
+
+          <!-- Destinations Filters -->
+          <div>
+            <h6 class="fw-bold mb-3">Destinations</h6>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="nungwiCheck" checked>
+              <label class="form-check-label" for="nungwiCheck">Nungwi &amp; Kendwa (North)</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="matemweCheck" checked>
+              <label class="form-check-label" for="matemweCheck">Matemwe &amp; Michamvi (East)</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="pembaCheck" checked>
+              <label class="form-check-label" for="pembaCheck">Pemba Island / Off-Grid</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="zanzibarMainCheck" checked>
+              <label class="form-check-label" for="zanzibarMainCheck">Zanzibar Main Island</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="mafiaCheck">
+              <label class="form-check-label" for="mafiaCheck">Mafia Island</label>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Packages Listing -->
+      <main class="col-lg-9">
+        <h2 class="section-title">Popular Packages</h2>
+
+        <!-- Package Card 3: Nungwi & Kendwa Experience -->
+        <div class="trip-card">
+          <div class="trip-image-wrap">
+            <div class="trip-image" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&amp;fit=crop&amp;w=800&amp;q=80');"></div>
+            <span class="badge-category">North Coast Luxury</span>
+          </div>
+          <div class="trip-details">
+            <div>
+              <h3>Nungwi &amp; Kendwa All-Day Swim Escape</h3>
+              <ul class="trip-highlights">
+                <li><i class="fas fa-check-circle"></i> Non-Tidal Turquoise Swimming Waters</li>
+                <li><i class="fas fa-check-circle"></i> Private Luxury Villa at Zuri Zanzibar</li>
+                <li><i class="fas fa-check-circle"></i> Sunset Dhow Champagne Cruise</li>
+              </ul>
+              <div class="route-text">
+                <i class="fas fa-route me-2"></i>Stone Town &gt; Kendwa Beach &gt; Nungwi Coast
+              </div>
+            </div>
+            <div class="card-footer-action">
+              <div class="trip-price">$1,850 <span>/ person</span></div>
+              <a href="nungwi.html" class="btn-view-trip">
+                View This Trip <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package Card 4: Matemwe & Michamvi Retreat -->
+        <div class="trip-card">
+          <div class="trip-image-wrap">
+            <div class="trip-image" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&amp;fit=crop&amp;w=800&amp;q=80');"></div>
+            <span class="badge-category">East Coast Seclusion</span>
+          </div>
+          <div class="trip-details">
+            <div>
+              <h3>Matemwe &amp; Michamvi Sanctuary</h3>
+              <ul class="trip-highlights">
+                <li><i class="fas fa-check-circle"></i> Private Butler Service &amp; Plunge Pools</li>
+                <li><i class="fas fa-check-circle"></i> Mnemba Atoll Coral Reef Diving</li>
+                <li><i class="fas fa-check-circle"></i> Dinner at The Rock Restaurant</li>
+              </ul>
+              <div class="route-text">
+                <i class="fas fa-route me-2"></i>Michamvi Peninsula &gt; Matemwe &gt; Mnemba Atoll
+              </div>
+            </div>
+            <div class="card-footer-action">
+              <div class="trip-price">$2,750 <span>/ person</span></div>
+              <a href="matemwe.html" class="btn-view-trip">
+                View This Trip <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package Card 5: Off-Grid Sanctuary (Pemba) -->
+        <div class="trip-card">
+          <div class="trip-image-wrap">
+            <div class="trip-image" style="background-image: url('https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&amp;fit=crop&amp;w=800&amp;q=80');"></div>
+            <span class="badge-category">Exclusive Wilderness</span>
+          </div>
+          <div class="trip-details">
+            <div>
+              <h3>Pemba Off-Grid Underwater Expedition</h3>
+              <ul class="trip-highlights">
+                <li><i class="fas fa-check-circle"></i> Stay in the World-Famous Underwater Room</li>
+                <li><i class="fas fa-check-circle"></i> Pristine Deep Channel Marine Diving</li>
+                <li><i class="fas fa-check-circle"></i> Rainforest &amp; Spice Island Excursions</li>
+              </ul>
+              <div class="route-text">
+                <i class="fas fa-route me-2"></i>Zanzibar Main Island &gt; Flight to Pemba &gt; Manta Resort
+              </div>
+            </div>
+            <div class="card-footer-action">
+              <div class="trip-price">$3,900 <span>/ person</span></div>
+              <a href="pemba.html" class="btn-view-trip">
+                View This Trip <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/255769128208" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h3>Refined Luxury &amp; Tailor</h3>
+        <p>Experience the magic of Tanzania, from the wilderness of Serengeti to the turquoise waters of Zanzibar, on an unforgettable safari journey tailored to your exact dreams.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Destinations.html">Destinations</a></li>
+          <li><a href="safaris.html">Safari</a></li>
+          <li><a href="packages.html">Our Packages</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <ul class="contact-list">
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+            <span>Arusha, Tanzania</span>
+          </li>
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+            <span>+255 769 128 208</span>
+          </li>
+          <li>
+            <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+            <span>info@refinedluxurytailor.com</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <p class="mb-3" style="font-size: 0.85rem;">Connect with us on social media for daily safari &amp; beach inspiration.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/255769128208" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Refined Luxury &amp; Tailor Expedition. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
